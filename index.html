@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halstead Systems | AWS Cost Assessment</title>
+<meta name="description" content="A fixed-scope AWS cost assessment for SaaS and software companies. Ranked savings plan in 5 business days, read-only access, no disruption to production.">
+<link rel="canonical" href="https://halsteadsystems.com/">
+<meta name="theme-color" content="#12161C">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Halstead Systems">
+<meta property="og:title" content="Halstead Systems | AWS Cost Assessment">
+<meta property="og:description" content="A fixed-scope AWS cost assessment for SaaS and software companies. Ranked savings plan in 5 business days, read-only access, no disruption to production.">
+<meta property="og:url" content="https://halsteadsystems.com/">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2312161C'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia,serif' font-size='40' fill='%23E3A93E'%3EH%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #12161C;
+    --surface: #181D25;
+    --rule: #2A313B;
+    --ink: #ECEEF0;
+    --body: #BCC3CC;
+    --muted: #8A929D;
+    --amber: #E3A93E;
+    --amber-hover: #EDB85A;
+    --on-amber: #1A1307;
+
+    --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    --wrap: 1080px;
+    --gutter: clamp(20px, 5vw, 48px);
+    --section: clamp(72px, 10vw, 120px);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--body);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  p { margin: 0; }
+  a { color: inherit; }
+
+  .wrap {
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding-inline: var(--gutter);
+  }
+
+  /* Type */
+  h1, h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    color: var(--ink);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  h1 {
+    font-size: clamp(44px, 6.4vw, 80px);
+    line-height: 1.04;
+    max-width: 19ch;
+  }
+  h2 {
+    font-size: clamp(32px, 3.8vw, 46px);
+    line-height: 1.1;
+    max-width: 22ch;
+  }
+  h3 {
+    font-family: var(--sans);
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 0;
+  }
+  .lede {
+    font-size: clamp(18px, 1.6vw, 21px);
+    line-height: 1.55;
+    max-width: 58ch;
+  }
+  .small { font-size: 15px; color: var(--muted); }
+
+  /* Links and buttons */
+  .text-link {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+  }
+  .text-link:hover { text-decoration-color: var(--amber); }
+
+  .button {
+    display: inline-block;
+    background: var(--amber);
+    color: var(--on-amber);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: none;
+    padding: 17px 24px;
+    border-radius: 6px;
+    transition: background-color .15s ease;
+  }
+  .button:hover { background: var(--amber-hover); }
+
+  :focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Header */
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding-block: 28px;
+  }
+  .wordmark {
+    font-family: var(--serif);
+    font-size: 24px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .header-contact { font-size: 15px; color: var(--muted); }
+
+  /* Hero */
+  .hero {
+    padding-top: clamp(48px, 8vw, 104px);
+    padding-bottom: var(--section);
+  }
+  .hero h1 { margin-bottom: 28px; }
+  .hero .lede { margin-bottom: 40px; }
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 24px;
+  }
+
+  /* Sections */
+  .section {
+    padding-block: var(--section);
+    border-top: 1px solid var(--rule);
+  }
+  .section-head { margin-bottom: 48px; }
+  .section-head p { margin-top: 20px; max-width: 58ch; }
+
+  /* Ledger */
+  .ledger {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .ledger li {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding-block: 18px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .ledger .item { color: var(--ink); font-weight: 500; flex-shrink: 0; }
+  .ledger .leader {
+    flex: 1;
+    min-width: 24px;
+    border-bottom: 1px dotted var(--muted);
+    opacity: .5;
+    transform: translateY(-5px);
+  }
+  .ledger .note { color: var(--muted); text-align: right; flex-shrink: 0; }
+  .ledger-total {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding-top: 22px;
+    font-family: var(--serif);
+    font-size: 26px;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+
+  /* Steps */
+  .steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .step { border-top: 2px solid var(--rule); padding-top: 24px; }
+  .step:first-child { border-top-color: var(--amber); }
+  .step-num {
+    display: block;
+    font-family: var(--serif);
+    font-size: 44px;
+    line-height: 1;
+    color: var(--amber);
+    margin-bottom: 18px;
+  }
+  .step h3 { margin-bottom: 6px; }
+  .step-meta { font-size: 15px; color: var(--muted); margin-bottom: 16px; }
+  .step p:last-child { font-size: 17px; }
+
+  .guarantee {
+    margin-top: 56px;
+    padding: 24px 28px;
+    background: var(--surface);
+    border-left: 2px solid var(--amber);
+    border-radius: 0 6px 6px 0;
+    max-width: 72ch;
+  }
+  .guarantee strong { color: var(--ink); font-weight: 600; }
+
+  /* Proof */
+  .about {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: 64px;
+    align-items: start;
+  }
+  .about-text p + p { margin-top: 20px; }
+  .about-text h2 { margin-bottom: 24px; }
+  .proof {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 32px;
+    margin: 0;
+  }
+  .proof div { border-top: 1px solid var(--rule); padding-top: 18px; }
+  .proof dt {
+    font-family: var(--serif);
+    font-size: 38px;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .proof dd { margin: 0; font-size: 16px; line-height: 1.5; }
+
+  /* Fit */
+  .fit p { max-width: 60ch; }
+  .fit h2 { margin-bottom: 24px; }
+
+  /* FAQ */
+  .faq { border-top: 1px solid var(--rule); max-width: 800px; }
+  .faq details { border-bottom: 1px solid var(--rule); }
+  .faq summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding-block: 22px;
+    color: var(--ink);
+    font-weight: 500;
+    font-size: 19px;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "";
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    background:
+      linear-gradient(var(--amber), var(--amber)) center / 12px 2px no-repeat,
+      linear-gradient(var(--amber), var(--amber)) center / 2px 12px no-repeat;
+    transition: transform .2s ease;
+  }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq details p { padding-bottom: 24px; max-width: 62ch; }
+
+  /* Closing */
+  .closing h2 { margin-bottom: 32px; }
+  .closing .cta-row { gap: 16px 28px; }
+
+  .site-footer {
+    border-top: 1px solid var(--rule);
+    padding-block: 32px;
+    font-size: 14px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Responsive */
+  @media (max-width: 880px) {
+    .steps { grid-template-columns: 1fr; gap: 48px; }
+    .about { grid-template-columns: 1fr; gap: 48px; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 17px; }
+    .header-contact { display: none; }
+    .ledger li { flex-direction: column; gap: 4px; }
+    .ledger .leader { display: none; }
+    .ledger .note { text-align: left; }
+    .ledger-total { font-size: 22px; }
+    .proof { grid-template-columns: 1fr; gap: 28px; }
+    .proof dt { font-size: 34px; }
+    .button { width: 100%; text-align: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="site-header">
+    <a class="wordmark" href="/">Halstead Systems</a>
+    <a class="header-contact text-link" href="mailto:sam@halsteadsystems.com">sam@halsteadsystems.com</a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Cut waste from your AWS bill without disrupting production.</h1>
+      <p class="lede">A fixed-scope AWS cost assessment for SaaS and software companies. You get a ranked plan showing where the money is going, what each fix is worth, and what it takes to make it.</p>
+      <div class="cta-row">
+        <a class="button" href="https://cal.com/sam-e/aws-cost-review" target="_blank" rel="noopener">Book a 20-minute AWS cost review</a>
+        <span class="small">Free. No console access needed.</span>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="waste-title">
+      <div class="section-head">
+        <h2 id="waste-title">Where AWS money usually goes</h2>
+      </div>
+      <ul class="ledger">
+        <li><span class="item">Idle or orphaned resources</span><span class="leader" aria-hidden="true"></span><span class="note">Billed every hour, used by no one</span></li>
+        <li><span class="item">Oversized instances</span><span class="leader" aria-hidden="true"></span><span class="note">Paying for headroom you never touch</span></li>
+        <li><span class="item">Forgotten development environments</span><span class="leader" aria-hidden="true"></span><span class="note">Running nights and weekends</span></li>
+        <li><span class="item">Storage and data transfer</span><span class="leader" aria-hidden="true"></span><span class="note">Old snapshots, chatty cross-zone traffic</span></li>
+        <li><span class="item">Commitments that don't match usage</span><span class="leader" aria-hidden="true"></span><span class="note">On-demand rates for steady workloads</span></li>
+        <li><span class="item">Costs nobody can attribute</span><span class="leader" aria-hidden="true"></span><span class="note">No tags, no owner, no review</span></li>
+      </ul>
+      <p class="ledger-total">None of this breaks anything, which is why it stays on the bill.</p>
+    </section>
+
+    <section class="section" aria-labelledby="how-title">
+      <div class="section-head">
+        <h2 id="how-title">How it works</h2>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num" aria-hidden="true">1</span>
+          <h3>AWS Cost Review</h3>
+          <p class="step-meta">20 minutes, free</p>
+          <p>We go over your spend, account structure, Savings Plan coverage, and what you're running. If you can, send a Cost Explorer export ahead of time. By the end you'll know whether an assessment is worth doing. If it isn't, I'll tell you.</p>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">2</span>
+          <h3>AWS Cost Assessment</h3>
+          <p class="step-meta">5 business days, fixed fee</p>
+          <p>Read-only access only. I analyze billing, usage, and resource configuration, then deliver a ranked savings plan: each finding, its dollar impact, the risk, and the effort to fix it. The plan is yours whether or not you hire me to implement it.</p>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">3</span>
+          <h3>AWS Cost Implementation</h3>
+          <p class="step-meta">Quoted from the plan</p>
+          <p>I make the approved changes on your schedule, inside your change windows, and document before-and-after costs. Your assessment fee is credited toward implementation.</p>
+        </li>
+      </ol>
+      <p class="guarantee"><strong>The 5 days start when read-only access is granted.</strong> If the plan isn't delivered in that window, I keep working at no additional cost until it is.</p>
+    </section>
+
+    <section class="section" aria-labelledby="about-title">
+      <div class="about">
+        <div class="about-text">
+          <h2 id="about-title">Who does the work</h2>
+          <p>Halstead Systems is run by Sam Ashtar, a senior platform and infrastructure engineer. I've spent the last seven years building and running AWS infrastructure for federal agencies and large organizations, including systems that handle sensitive data. Public Trust cleared.</p>
+          <p>You work with me directly, from the review call through implementation.</p>
+          <p><a class="text-link" href="https://www.linkedin.com/in/samseew" target="_blank" rel="noopener">LinkedIn</a></p>
+        </div>
+        <dl class="proof">
+          <div><dt>$68K/month</dt><dd>AWS spend cut on a federal security analytics platform.</dd></div>
+          <div><dt>100+ agencies</dt><dd>Served by platforms I've architected and operated.</dd></div>
+          <div><dt>3 months to 3 days</dt><dd>AWS access provisioning, after redesigning the approval workflow.</dd></div>
+          <div><dt>~150 hours/month</dt><dd>Engineering time recovered by tracing chronic job failures to their root cause.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section fit" aria-labelledby="fit-title">
+      <h2 id="fit-title">Who it's for</h2>
+      <p>SaaS and software companies spending $10,000 or more a month on AWS, where nobody owns cloud cost full time. If your spend is lower or you already have a FinOps function, the review will probably show an assessment isn't worth it.</p>
+    </section>
+
+    <section class="section" aria-labelledby="faq-title">
+      <div class="section-head">
+        <h2 id="faq-title">Common questions</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Do you need access to our AWS account?</summary>
+          <p>Not for the review. For the assessment, read-only access only. Nothing gets changed without written approval.</p>
+        </details>
+        <details>
+          <summary>What does the assessment cost?</summary>
+          <p>A fixed fee based on your account count and spend, quoted on the review call. It's credited toward implementation if you go ahead.</p>
+        </details>
+        <details>
+          <summary>What if there isn't much to save?</summary>
+          <p>You'll hear that on the review call, before you've paid anything.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section closing" aria-labelledby="closing-title">
+      <h2 id="closing-title">Find out what your AWS bill is hiding.</h2>
+      <div class="cta-row">
+        <a class="button" href="https://cal.com/sam-e/aws-cost-review" target="_blank" rel="noopener">Book a 20-minute AWS cost review</a>
+        <span class="small">Or email <a class="text-link" href="mailto:sam@halsteadsystems.com">sam@halsteadsystems.com</a></span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Halstead Systems</span>
+    <span>Richmond, Virginia</span>
+  </footer>
+</div>
+
+</body>
+</html>
