@@ -7,9 +7,9 @@ deployed on Vercel from `main`.
 
 Changes go straight to `main`. Do not open pull requests.
 
-Font-variant work is the one exception: those live on their own branches
-(`font-newsreader`, `font-schibsted`, `font-geist`) so Vercel builds a preview for each.
-When one is chosen, merge it into `main` directly and delete the rest.
+Trying alternate fonts or layouts is the one exception: put each on its own branch so
+Vercel builds a preview for it, compare, then merge the winner into `main` directly and
+delete the rest. The heading font was settled this way and those branches are gone.
 
 ## What the page is for
 
@@ -52,8 +52,11 @@ grep -oE '\$[0-9][0-9,.]*[KkMm]?(/month)?' index.html | sort -u                 
 ## Design constraints
 
 - Dark palette with amber accent. Both are CSS variables at the top of the `<style>` block.
-- Heading font is a CSS variable (`--serif`) plus `--h-weight` / `--h-track` / `--h1-track`,
-  so a font variant is a change to those variables only.
+- The page uses one family, Geist, for both headings and body. `--serif` and `--sans` hold
+  the same stack; the names are historical, from when headings were set in a serif. Heading
+  weight and tracking are `--h-weight` / `--h-track` / `--h1-track`, so a font change is a
+  change to those variables and the Google Fonts link, nothing else.
+- `og.png` is set in the heading font, so a font change means regenerating it. See below.
 - Body copy 18px, line length under 70 characters.
 - Sections alternate between `--bg` and `--raised` via `.band` / `.band--raised`.
 - Buttons: 6px radius, solid amber primary, outlined secondary in the header.
@@ -82,5 +85,9 @@ python3 -m http.server 8787 --bind 127.0.0.1    # then open http://127.0.0.1:878
 python3 tools/make-og.py
 ```
 
-It downloads the heading font into `tools/.fonts/` (gitignored) and writes a 1200x630 `og.png`
-at the repo root. Rerun it whenever the wordmark, headline, or heading font changes.
+It downloads Geist into `tools/.fonts/` (gitignored) and writes a 1200x630 `og.png` at the
+repo root. Rerun it whenever the wordmark, headline, or heading font changes.
+
+Geist is a variable font, so the script pulls its SemiBold instance off the `wght` axis to
+match the page. The headline size is not hard coded: the script steps down from 72px until
+the line breaks into two, because a weight or wording change moves that threshold.
