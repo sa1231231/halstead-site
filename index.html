@@ -420,6 +420,46 @@
   }
   .proof dd { margin: 0; font-size: 15px; line-height: 1.5; color: var(--muted); }
 
+  /* Quotes */
+  .quotes-block { margin-top: 64px; }
+  .quotes-head {
+    font-family: var(--serif);
+    font-weight: var(--h-weight);
+    letter-spacing: var(--h-track);
+    font-size: clamp(22px, 2.2vw, 28px);
+    line-height: 1.2;
+    color: var(--ink);
+  }
+  .quotes-note {
+    margin-top: 10px;
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 56ch;
+  }
+  .quotes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 56px;
+    margin-top: 36px;
+  }
+  .quote {
+    margin: 0;
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+  }
+  .quote blockquote {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: 46ch;
+  }
+  .quote figcaption {
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
   /* Fit */
   .fit h2 { margin-bottom: 22px; }
   .fit p { max-width: 62ch; }
@@ -476,6 +516,7 @@
   }
   @media (max-width: 760px) {
     .checklist { grid-template-columns: 1fr; gap: 18px; }
+    .quotes { grid-template-columns: 1fr; gap: 28px; }
     .about { grid-template-columns: 1fr; gap: 28px; }
   }
   @media (max-width: 640px) {
@@ -626,11 +667,33 @@
         </div>
       </div>
       <dl class="proof">
-        <div><dt>$68K/month</dt><dd>AWS spend cut on a federal security analytics platform.</dd></div>
+        <div><dt>$68K/month</dt><dd>AWS spend cut on a federal security analytics platform, about 30% of the bill.</dd></div>
         <div><dt>100+ agencies</dt><dd>Served by platforms I've architected and operated.</dd></div>
         <div><dt>3 months to 3 days</dt><dd>AWS access provisioning, after redesigning the approval workflow.</dd></div>
         <div><dt>~150 hours/month</dt><dd>Engineering time recovered by tracing chronic job failures to their root cause.</dd></div>
       </dl>
+      <div class="quotes-block">
+        <h3 class="quotes-head">What it is like to work with me</h3>
+        <p class="quotes-note">These come from automation and software projects outside AWS. They speak to how I work.</p>
+        <div class="quotes">
+          <figure class="quote">
+            <blockquote>“If you combine his tech abilities, his understanding of business, and his work ethic, I think you’d be hard-pressed to find someone better.”</blockquote>
+            <figcaption>Cole Bingham, Wingman Insurance</figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>“I’m able to automate some things that still maintain that high-touch feeling but I don’t have to go do it. It really saved me a ton of time and a lot of brain space. I have a lot more time to sit and think strategically.”</blockquote>
+            <figcaption>Jane Garee, Showstopping Sales</figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>“I feel a lot more confident that the customer’s being taken care of. I was doing it all myself and I shouldn’t have to spend so much time. You had it in your brain before we even did it on a whiteboard.”</blockquote>
+            <figcaption>Jeffrey Melara, Melara’s Coffee</figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>“The process is sped up and it requires less of me. You move things forward in a reliable way.”</blockquote>
+            <figcaption>Kristen Alvarez, Happy Paws</figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
   </section>
 

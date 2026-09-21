@@ -25,12 +25,16 @@ technical, and allergic to marketing language. Specificity and restraint earn th
 These are hard constraints. Check them before every push.
 
 - No email address or phone number anywhere on the page. The cal.com link is the only contact path.
-- No invented, illustrative, or example dollar figures. The only dollar amounts allowed are
-  `$68K/month` (proof figure) and `$10,000` (qualification threshold).
+- Every number on the page has to be true and traceable to an actual engagement. Figures from
+  the work are welcome and specific is better than vague, but nothing illustrative, rounded for
+  effect, or invented to fill a slot.
 - The sample assessment table in the hero shows structure only. Impact, Risk, and Effort use
   words (High, Medium, Low, "2 hours", "1 day"), never dollar amounts. Keep it labeled as a sample.
 - No specific federal agency or employer names. "Federal" stays generic.
 - No savings guarantee. The only guarantee is the delivery one in the How it works callout.
+- The client quotes in the "Who does the work" band come from automation and software projects
+  outside AWS, and the page says so directly. Do not drop that framing: unexplained quotes from
+  unrelated businesses read as padding to the buyer this page is written for.
 
 ## Copy style
 
@@ -46,7 +50,7 @@ Run the checks:
 grep -nE 'mailto:|tel:|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}' index.html   # expect none
 grep -n '—\|–' index.html                                                           # expect none
 grep -niE '\breal\b|rather than|\bnot [a-z]+,? but\b' index.html                    # expect none
-grep -oE '\$[0-9][0-9,.]*[KkMm]?(/month)?' index.html | sort -u                     # expect only $10,000 and $68K/month
+grep -oE '\$[0-9][0-9,.]*[KkMm]?(/month)?' index.html | sort -u                     # every figure traceable to real work
 ```
 
 ## Design constraints
