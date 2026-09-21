@@ -28,8 +28,9 @@ These are hard constraints. Check them before every push.
 - Every number on the page has to be true and traceable to an actual engagement. Figures from
   the work are welcome and specific is better than vague, but nothing illustrative, rounded for
   effect, or invented to fill a slot.
-- The sample assessment table in the hero shows structure only. Impact, Risk, and Effort use
-  words (High, Medium, Low, "2 hours", "1 day"), never dollar amounts. Keep it labeled as a sample.
+- The hero's right panel is proof, not a sample. It leads with the $68K/month figure and the
+  30% share it represents on one engagement, then lists what was actually done. Keep it tied to
+  work that happened; it is the first thing a skeptical visitor reads.
 - No specific federal agency or employer names. "Federal" stays generic.
 - No savings guarantee. The only guarantee is the delivery one in the How it works callout.
 - The client quotes in the "Who does the work" band come from automation and software projects
@@ -53,6 +54,16 @@ grep -niE '\breal\b|rather than|\bnot [a-z]+,? but\b' index.html                
 grep -oE '\$[0-9][0-9,.]*[KkMm]?(/month)?' index.html | sort -u                     # every figure traceable to real work
 ```
 
+## Page order
+
+Hero, who it's for, where the money goes, how it works, what's included, questions, who does the
+work, closing call to action. Sections alternate base and raised backgrounds strictly, so
+inserting or moving one means re-checking the whole run of `band--raised`.
+
+Qualification sits high on purpose: a visitor who is not a fit should find that out before
+reading the offer. The person and the client quotes sit last, immediately before the closing
+call to action, so the page asks for the booking right after the reason to trust him.
+
 ## Design constraints
 
 - Dark palette with amber accent. Both are CSS variables at the top of the `<style>` block.
@@ -66,10 +77,15 @@ grep -oE '\$[0-9][0-9,.]*[KkMm]?(/month)?' index.html | sort -u                 
 - Buttons: 6px radius, solid amber primary, outlined secondary in the header.
 - One page-load fade on the hero only. Nothing else animates on its own.
   `prefers-reduced-motion: reduce` disables all animation and transition.
-- The headshot at `/images/sam.jpg` is optional. Its `onerror` handler removes the element,
-  so the layout holds when the file is absent.
-- Must hold up at 375px wide. The ledger, the sample table, and the proof grid are the three
-  things that break first.
+- The headshot at `/images/sam.jpg` is optional. Its `onerror` handler adds `is-photoless` to
+  `.about` and then removes the image. Both halves matter: without the class the text drops into
+  the 176px photo column and sets as a narrow ribbon down the left.
+- Must hold up at 375px wide. The waste grid, the hero proof panel, and the proof figures are
+  the three things that break first.
+- The headline figure in the hero is a hero number and the bar under it is a meter, which is the
+  right form for one ratio against a whole. Do not turn it into a chart: a two-slice pie or a
+  one-bar bar chart says less and takes more room. The meter fill is amber on a dim step of the
+  same amber, so it reads as one scale.
 
 ## Local preview
 
