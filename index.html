@@ -180,6 +180,12 @@
     gap: 16px;
     padding-block: 14px;
   }
+  .label-short { display: none; }
+  @media (max-width: 620px) {
+    .label-full { display: none; }
+    .label-short { display: inline; }
+  }
+
   .wordmark {
     font-family: var(--serif);
     font-weight: var(--h-weight);
@@ -500,7 +506,7 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="wordmark" href="/">Halstead Systems</a>
-    <a class="button-secondary" href="https://cal.com/sam-e/aws-cost-review" target="_blank" rel="noopener">Book a review</a>
+    <a class="button-secondary" href="https://cal.com/sam-e/aws-cost-review" target="_blank" rel="noopener"><span class="label-full">Book a free AWS cost review</span><span class="label-short">Book a free review</span></a>
   </div>
 </header>
 
