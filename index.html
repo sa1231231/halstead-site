@@ -319,34 +319,6 @@
   }
   .callout strong { color: var(--ink); font-weight: 600; }
 
-  /* Checklist */
-  .checklist {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px 56px;
-    max-width: 960px;
-  }
-  .checklist li {
-    position: relative;
-    padding-left: 32px;
-    font-size: 17px;
-    line-height: 1.5;
-    color: var(--ink);
-    max-width: 44ch;
-  }
-  .checklist li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 3px;
-    width: 19px;
-    height: 19px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23E3A93E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 10.6l4 4.1 9-9.4'/%3E%3C/svg%3E") center / contain no-repeat;
-  }
-
   /* About */
   .about {
     display: grid;
@@ -510,7 +482,6 @@
     .waste { grid-template-columns: 1fr 1fr; gap: 30px 40px; }
   }
   @media (max-width: 760px) {
-    .checklist { grid-template-columns: 1fr; gap: 18px; }
     .quotes { grid-template-columns: 1fr; gap: 28px; }
     .about { grid-template-columns: 1fr; gap: 28px; }
     .fit-cols { grid-template-columns: 1fr; gap: 28px; }
@@ -563,6 +534,45 @@
 
   <div id="scroll-sentinel" aria-hidden="true"></div>
 
+  <section class="band band--raised" aria-labelledby="waste-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="waste-title">Where AWS money usually goes</h2>
+      </div>
+      <ul class="waste">
+        <li><span class="item">Idle or orphaned resources</span><span class="note">Volumes still billing for instances deleted months ago</span></li>
+        <li><span class="item">Oversized instances</span><span class="note">Paying for headroom you never touch</span></li>
+        <li><span class="item">Storage and data transfer</span><span class="note">Snapshots nobody prunes, cross-zone traffic nobody measures</span></li>
+        <li><span class="item">Commitments that don't match usage</span><span class="note">Savings Plans bought for a fleet you no longer run</span></li>
+        <li><span class="item">Costs nobody can attribute</span><span class="note">No tags, no owner, no review</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="how-title">How it works</h2>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num" aria-hidden="true">1</span>
+          <h3>AWS Cost Review</h3>
+          <p class="step-meta">20 minutes, free</p>
+          <p>We go over your spend, account structure, Savings Plan coverage, and what you're running. If you can, send a Cost Explorer export ahead of time. By the end you'll know whether an assessment is worth doing. If it isn't, we'll tell you.</p>
+          <p>Nothing to install, no console access, no deck.</p>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">2</span>
+          <h3>AWS Cost Assessment</h3>
+          <p class="step-meta">5 business days, fixed fee</p>
+          <p>Read-only access only. We analyze billing, usage, and resource configuration, then deliver a ranked savings plan: each finding, its dollar impact, the risk, and the effort to fix it. The plan is yours whether or not you hire us to implement it.</p>
+        </li>
+      </ol>
+      <p class="callout"><strong>The 5 days start when read-only access is granted.</strong> If the plan isn't delivered in that window, we keep working at no additional cost until it is.</p>
+    </div>
+  </section>
+
   <section class="band band--raised fit" aria-labelledby="fit-title">
     <div class="wrap">
       <div class="section-head">
@@ -587,87 +597,6 @@
         </div>
       </div>
       <p class="small" style="margin-top: 30px; max-width: 60ch;">If “probably not yet” describes you, the review will say so and you will have spent 20 minutes.</p>
-    </div>
-  </section>
-
-  <section class="band" aria-labelledby="waste-title">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="waste-title">Where AWS money usually goes</h2>
-      </div>
-      <ul class="waste">
-        <li><span class="item">Idle or orphaned resources</span><span class="note">Volumes still billing for instances deleted months ago</span></li>
-        <li><span class="item">Oversized instances</span><span class="note">Paying for headroom you never touch</span></li>
-        <li><span class="item">Storage and data transfer</span><span class="note">Snapshots nobody prunes, cross-zone traffic nobody measures</span></li>
-        <li><span class="item">Commitments that don't match usage</span><span class="note">Savings Plans bought for a fleet you no longer run</span></li>
-        <li><span class="item">Costs nobody can attribute</span><span class="note">No tags, no owner, no review</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="band band--raised" aria-labelledby="how-title">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="how-title">How it works</h2>
-      </div>
-      <ol class="steps">
-        <li class="step">
-          <span class="step-num" aria-hidden="true">1</span>
-          <h3>AWS Cost Review</h3>
-          <p class="step-meta">20 minutes, free</p>
-          <p>We go over your spend, account structure, Savings Plan coverage, and what you're running. If you can, send a Cost Explorer export ahead of time. By the end you'll know whether an assessment is worth doing. If it isn't, we'll tell you.</p>
-          <p>Nothing to install, no console access, no deck.</p>
-        </li>
-        <li class="step">
-          <span class="step-num" aria-hidden="true">2</span>
-          <h3>AWS Cost Assessment</h3>
-          <p class="step-meta">5 business days, fixed fee</p>
-          <p>Read-only access only. We analyze billing, usage, and resource configuration, then deliver a ranked savings plan: each finding, its dollar impact, the risk, and the effort to fix it. The plan is yours whether or not you hire us to implement it.</p>
-        </li>
-      </ol>
-      <p class="callout"><strong>The 5 days start when read-only access is granted.</strong> If the plan isn't delivered in that window, we keep working at no additional cost until it is.</p>
-    </div>
-  </section>
-
-  <section class="band" aria-labelledby="includes-title">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="includes-title">What the assessment includes</h2>
-      </div>
-      <ul class="checklist">
-        <li>Every finding ranked by estimated monthly savings</li>
-        <li>Risk and effort rated for each fix</li>
-        <li>A recommended order of work</li>
-        <li>Savings Plan and Reserved Instance recommendations sized to your actual usage</li>
-        <li>Tagging and ownership fixes so costs stay visible</li>
-        <li>A 30-minute readout call to walk your team through the plan</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="band band--raised" aria-labelledby="faq-title">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="faq-title">Common questions</h2>
-      </div>
-      <div class="faq">
-        <details>
-          <summary>Do you need access to our AWS account?</summary>
-          <p>Not for the review. For the assessment, read-only access only. Nothing gets changed without written approval.</p>
-        </details>
-        <details>
-          <summary>What does the assessment cost?</summary>
-          <p>A fixed fee based on your account count and spend, quoted on the review call.</p>
-        </details>
-        <details>
-          <summary>What if there isn't much to save?</summary>
-          <p>You'll hear that on the review call, before you've paid anything.</p>
-        </details>
-        <details>
-          <summary>What if we want you to make the changes?</summary>
-          <p>Implementation is a separate engagement, quoted from the plan and scheduled inside your change windows. Approved changes only, with before-and-after costs documented. Your assessment fee is credited toward it.</p>
-        </details>
-      </div>
     </div>
   </section>
 
@@ -714,7 +643,33 @@
     </div>
   </section>
 
-  <section class="band band--raised closing" aria-labelledby="closing-title">
+  <section class="band band--raised" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="faq-title">Common questions</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Do you need access to our AWS account?</summary>
+          <p>Not for the review. For the assessment, read-only access only. Nothing gets changed without written approval.</p>
+        </details>
+        <details>
+          <summary>What does the assessment cost?</summary>
+          <p>A fixed fee based on your account count and spend, quoted on the review call.</p>
+        </details>
+        <details>
+          <summary>What if there isn't much to save?</summary>
+          <p>You'll hear that on the review call, before you've paid anything.</p>
+        </details>
+        <details>
+          <summary>What if we want you to make the changes?</summary>
+          <p>Implementation is a separate engagement, quoted from the plan and scheduled inside your change windows. Approved changes only, with before-and-after costs documented. Your assessment fee is credited toward it.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band closing" aria-labelledby="closing-title">
     <div class="wrap">
       <h2 id="closing-title">Find out whether there is anything worth cutting.</h2>
       <div class="cta-row">
