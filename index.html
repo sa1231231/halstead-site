@@ -72,7 +72,15 @@
           "name": "Do you need access to our AWS account?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Not for the review. For the assessment, read-only access only. Nothing gets changed without written approval."
+            "text": "Not for the 20-minute review. If a full assessment makes sense after that, it only needs a read-only IAM role that you create and can revoke at any time. Nothing gets changed without your written approval, and I'm happy to sign an NDA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why not just use a cost tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tools are good at showing you what's expensive. They can't tell which of those resources production depends on, and they won't restructure anything for you. The review tells you whether you need more than what AWS gives you for free. Sometimes the answer is a tool, and I'll say so."
           }
         },
         {
@@ -321,13 +329,6 @@
   /* Hero figure: the one number the page leads with. Sans, like everything
      else, and proportional figures so the digits do not sit loose. Green is
      stepped to the amber's contrast so the two accents read as equals. */
-  .figure-lead {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 17px;
-    line-height: 1.3;
-    color: var(--body);
-  }
   .figure-hero {
     display: block;
     font-size: clamp(42px, 4.9vw, 60px);
@@ -344,6 +345,19 @@
     color: var(--body);
     max-width: 32ch;
   }
+
+  /* A quiet line of fact under the hero. Plain text only, no marks or seals,
+     and sized down so it reads as a footnote to the headline rather than a
+     logo bar. The label and the names sit on one line and wrap together. */
+  .orgs {
+    margin-top: clamp(40px, 5vw, 64px);
+    padding-top: 22px;
+    border-top: 1px solid var(--rule-soft);
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+  .orgs-names { color: var(--body); }
 
   .hero-stack { display: grid; gap: 18px; align-self: center; }
   .hero-stack .panel { align-self: stretch; }
@@ -418,24 +432,53 @@
   .sources a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule); }
   .sources a:hover { color: var(--amber); text-decoration-color: var(--amber); }
 
-  /* Steps */
-  .step {
-    border-top: 2px solid var(--amber);
-    padding-top: 22px;
-    max-width: 52ch;
+  /* The 20 minute review */
+  /* Two equal columns with no measure cap, so the pair spans the container
+     instead of leaving the right half of the page empty. */
+  .review-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 44px clamp(40px, 6vw, 88px);
   }
-  .step p { font-size: 17px; max-width: 52ch; }
-  .step p + p { margin-top: 16px; }
-  .step .cta-row { margin-top: 28px; }
+  .review-col h3 {
+    border-top: 2px solid var(--amber);
+    padding-top: 18px;
+  }
+  .ticks {
+    list-style: none;
+    margin: 22px 0 0;
+    padding: 0;
+  }
+  .ticks li {
+    position: relative;
+    padding-left: 24px;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--body);
+  }
+  .ticks li + li { margin-top: 14px; }
+  /* The only accent inside the lists: a short amber rule, offset to sit on the
+     first line whatever the item wraps to. */
+  .ticks li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 10px;
+    height: 2px;
+    background: var(--amber);
+  }
+  .review-note { margin-top: 40px; font-size: 15px; color: var(--muted); }
+  .review-note + .cta-row { margin-top: 28px; }
 
   /* About */
-  /* One sentence of copy, so the photo is sized and centred to sit level with
-     it rather than towering over three lines of text. */
+  /* The bio column runs to a sentence, three proof lines and a link, so the
+     photo aligns to the top of it and stays a fixed 128px square. */
   .about {
     display: grid;
     grid-template-columns: 128px minmax(0, 1fr);
     gap: 32px;
-    align-items: center;
+    align-items: start;
   }
   /* The photo is optional and removes itself when the file is missing. Without
      this the text would drop into the 176px photo column and set as a ribbon. */
@@ -448,9 +491,21 @@
     border: 1px solid var(--rule);
   }
   .about-line { font-size: 19px; line-height: 1.55; max-width: 54ch; color: var(--body); }
+  .about-proof { margin-top: 24px; max-width: 62ch; }
+  .about-proof li { font-size: 16px; }
+  .about-proof li::before { top: 11px; }
+  .about-link { margin-top: 24px; font-size: 15px; }
+  .about-link a {
+    color: var(--amber);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(227, 169, 62, .4);
+    padding-bottom: 2px;
+  }
+  .about-link a:hover { border-bottom-color: var(--amber); }
 
   /* Quotes */
   .quotes-block { margin-top: 64px; }
+  .quotes-title { font-size: 21px; letter-spacing: var(--h-track); }
   .quotes {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -493,6 +548,8 @@
     object-fit: cover;
     border: 1px solid var(--rule);
   }
+
+  .founder-cta { margin-top: 56px; }
 
   /* FAQ */
   .faq { border-top: 1px solid var(--rule); max-width: 820px; }
@@ -546,6 +603,7 @@
   @media (max-width: 760px) {
     .quotes { grid-template-columns: 1fr; gap: 28px; }
     .about { grid-template-columns: 1fr; gap: 28px; }
+    .review-cols { grid-template-columns: 1fr; gap: 40px; }
   }
   @media (max-width: 640px) {
     .waste { grid-template-columns: 1fr; gap: 26px; }
@@ -586,9 +644,8 @@
 
       <div class="hero-stack">
         <div class="panel">
-          <span class="figure-lead">We saved</span>
           <span class="figure-hero">$68K/month</span>
-          <p class="figure-note">from the monthly AWS bill of a federal security analytics platform serving 100+ agencies.</p>
+          <p class="figure-note">cut from the monthly AWS bill of a federal security analytics platform serving 100+ agencies.</p>
         </div>
         <figure class="panel panel-quote">
           <blockquote>“If you combine his tech abilities, his understanding of business, and his work ethic, I think you’d be hard-pressed to find someone better.”</blockquote>
@@ -599,6 +656,10 @@
         </figure>
       </div>
     </div>
+
+    <div class="wrap">
+      <p class="orgs"><span class="orgs-label">Sam's infrastructure work has supported</span> <span class="orgs-names">CISA, the Department of Homeland Security, The College Board, and the U.S. Agency for Global Media</span></p>
+    </div>
   </section>
 
   <div id="scroll-sentinel" aria-hidden="true"></div>
@@ -607,12 +668,13 @@
     <div class="wrap">
       <div class="section-head">
         <h2 id="waste-title" class="is-wide">Where AWS money usually goes</h2>
+        <p class="section-lede">An estimated 29% of cloud spend is wasted.</p>
       </div>
       <ul class="waste">
-        <li><span class="item">Idle or orphaned resources</span><span class="note">Volumes still billing for instances deleted months ago</span><span class="stat"><b>83%</b> of container costs are idle</span></li>
-        <li><span class="item">Oversized instances</span><span class="note">Paying for headroom you never touch</span><span class="stat"><b>54%</b> of container spend is unallocated cluster capacity</span></li>
-        <li><span class="item">Storage and data transfer</span><span class="note">Snapshots nobody prunes, cross-zone traffic nobody measures</span><span class="stat"><b>~50%</b> of data transfer cost is cross-AZ traffic</span></li>
-        <li><span class="item">Commitments that don't match usage</span><span class="note">Savings Plans bought for a fleet you no longer run</span><span class="stat"><b>29%</b> of companies cover even half their eligible spend</span></li>
+        <li><span class="item">Idle or orphaned resources</span><span class="note">Volumes still billing for instances deleted months ago</span><span class="stat"><b>83%</b> of container costs are tied to idle resources</span></li>
+        <li><span class="item">Oversized instances</span><span class="note">Paying for headroom you never touch</span><span class="stat"><b>54%</b> of container costs are overprovisioned cluster capacity</span></li>
+        <li><span class="item">Storage and data transfer</span><span class="note">Snapshots nobody prunes, cross-zone traffic nobody measures</span><span class="stat"><b>~50%</b> of data transfer spend is cross-AZ traffic</span></li>
+        <li><span class="item">Commitments that don't match usage</span><span class="note">Savings Plans bought for a fleet you no longer run</span><span class="stat"><b>33%</b> of organizations use no commitment discounts at all</span></li>
       </ul>
       <p class="sources">Figures from <a href="https://www.datadoghq.com/state-of-cloud-costs/" target="_blank" rel="noopener">Datadog 2024</a> and <a href="https://www.flexera.com/about-us/press-center/flexera-finds-cloud-value-is-rising-while-ai-waste-grows" target="_blank" rel="noopener">Flexera 2026</a>.</p>
     </div>
@@ -621,15 +683,31 @@
   <section class="band" aria-labelledby="how-title">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="how-title">How it works</h2>
-        <p class="section-lede">If you're spending $10,000 or more on AWS, there may be lots of opportunities to save on costs.</p>
+        <h2 id="how-title" class="is-wide">The 20-minute review</h2>
+        <p class="section-lede">You talk to Sam, the senior engineer who does the work. No sales team.</p>
       </div>
-      <div class="step">
-        <p>We go over your spend and what you're running, and we look for the patterns above in your account. By the end you'll know whether there is enough waste to be worth chasing and what it would take to go after it. If there isn't, we'll tell you on the call.</p>
-        <p>Nothing to install, and no access to your console.</p>
-        <div class="cta-row">
-          <a class="button" href="https://cal.com/sam-e/aws-cost-review" target="_blank" rel="noopener">Book a free AWS cost review</a>
+      <div class="review-cols">
+        <div class="review-col">
+          <h3>We go through</h3>
+          <ul class="ticks">
+            <li>Your monthly spend and how it splits across accounts and services</li>
+            <li>Savings Plan and Reserved Instance coverage</li>
+            <li>What's running, and how much of it sits idle</li>
+            <li>Whether anything is cleaning up unused resources today</li>
+          </ul>
         </div>
+        <div class="review-col">
+          <h3>You leave with</h3>
+          <ul class="ticks">
+            <li>A rough range of what's recoverable</li>
+            <li>The two or three places I'd look first</li>
+            <li>A straight answer on whether a paid assessment is worth it</li>
+          </ul>
+        </div>
+      </div>
+      <p class="review-note">If you can, send a Cost Explorer export beforehand. Not required.</p>
+      <div class="cta-row">
+        <a class="button" href="https://cal.com/sam-e/aws-cost-review" target="_blank" rel="noopener">Book a free AWS cost review</a>
       </div>
     </div>
   </section>
@@ -641,9 +719,18 @@
       </div>
       <div class="about">
         <img class="about-photo" src="/images/sam.jpg" alt="Sam Ashtar" width="128" height="128" loading="lazy" onerror="this.closest('.about').classList.add('is-photoless'); this.remove();">
-        <p class="about-line">Sam Ashtar is a senior platform engineer who has been trusted to run and operate AWS infrastructure for federal agencies and large enterprise organizations, including CISA, the Department of Homeland Security, and the College Board.</p>
+        <div class="about-body">
+          <p class="about-line">Sam Ashtar has run AWS infrastructure for federal agencies and large enterprise organizations, including systems that handle sensitive data. Public Trust cleared.</p>
+          <ul class="ticks about-proof">
+            <li>Cut AWS access provisioning from 3 months to 3 days</li>
+            <li>Recovered ~150 engineering hours a month by tracing chronic job failures to their root cause</li>
+            <li>Replaced a 10,000-line hand-maintained IAM policy file with an automated generator, ending recurring outages</li>
+          </ul>
+          <p class="about-link"><a href="https://www.linkedin.com/in/samseew/" target="_blank" rel="noopener">LinkedIn</a></p>
+        </div>
       </div>
       <div class="quotes-block">
+        <h3 class="quotes-title">What clients say about working with Sam</h3>
         <div class="quotes">
           <figure class="quote">
             <blockquote>“I’m able to automate some things that still maintain that high-touch feeling but I don’t have to go do it. It really saved me a ton of time and a lot of brain space. I have a lot more time to sit and think strategically.”</blockquote>
@@ -668,6 +755,9 @@
           </figure>
         </div>
       </div>
+      <div class="cta-row founder-cta">
+        <a class="button" href="https://cal.com/sam-e/aws-cost-review" target="_blank" rel="noopener">Book a free AWS cost review</a>
+      </div>
     </div>
   </section>
 
@@ -679,7 +769,11 @@
       <div class="faq">
         <details>
           <summary>Do you need access to our AWS account?</summary>
-          <p>Not for the review. For the assessment, read-only access only. Nothing gets changed without written approval.</p>
+          <p>Not for the 20-minute review. If a full assessment makes sense after that, it only needs a read-only IAM role that you create and can revoke at any time. Nothing gets changed without your written approval, and I'm happy to sign an NDA.</p>
+        </details>
+        <details>
+          <summary>Why not just use a cost tool?</summary>
+          <p>Tools are good at showing you what's expensive. They can't tell which of those resources production depends on, and they won't restructure anything for you. The review tells you whether you need more than what AWS gives you for free. Sometimes the answer is a tool, and I'll say so.</p>
         </details>
         <details>
           <summary>What does the assessment cost?</summary>
