@@ -258,6 +258,20 @@
     max-width: 32ch;
   }
 
+  .hero-stack { display: grid; gap: 18px; align-self: center; }
+  .hero-stack .panel { align-self: stretch; }
+  .panel-quote blockquote {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .panel-quote figcaption {
+    margin-top: 12px;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
   /* Where the money goes */
   .waste {
     list-style: none;
@@ -282,6 +296,31 @@
     font-size: 15px;
     line-height: 1.5;
   }
+  /* Published benchmark per item. The figure carries the weight in amber; the
+     clause after it names what the figure is a share OF, which is the whole
+     difference between a citation and a scary number. */
+  .waste .stat {
+    display: block;
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .waste .stat b {
+    color: var(--amber);
+    font-weight: 600;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+  }
+  .sources {
+    margin-top: 44px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 78ch;
+  }
+  .sources a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule); }
+  .sources a:hover { color: var(--amber); text-decoration-color: var(--amber); }
 
   /* Steps */
   .steps {
@@ -525,9 +564,15 @@
         </div>
       </div>
 
-      <div class="panel">
-        <span class="figure-hero">$68K/month</span>
-        <p class="figure-note">Cut from the monthly AWS bill of a federal security analytics platform serving 100+ agencies.</p>
+      <div class="hero-stack">
+        <div class="panel">
+          <span class="figure-hero">$68K/month</span>
+          <p class="figure-note">Cut from the monthly AWS bill of a federal security analytics platform serving 100+ agencies.</p>
+        </div>
+        <figure class="panel panel-quote">
+          <blockquote>“If you combine his tech abilities, his understanding of business, and his work ethic, I think you’d be hard-pressed to find someone better.”</blockquote>
+          <figcaption>Cole Bingham, Wingman Insurance</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -540,12 +585,13 @@
         <h2 id="waste-title">Where AWS money usually goes</h2>
       </div>
       <ul class="waste">
-        <li><span class="item">Idle or orphaned resources</span><span class="note">Volumes still billing for instances deleted months ago</span></li>
-        <li><span class="item">Oversized instances</span><span class="note">Paying for headroom you never touch</span></li>
-        <li><span class="item">Storage and data transfer</span><span class="note">Snapshots nobody prunes, cross-zone traffic nobody measures</span></li>
-        <li><span class="item">Commitments that don't match usage</span><span class="note">Savings Plans bought for a fleet you no longer run</span></li>
-        <li><span class="item">Costs nobody can attribute</span><span class="note">No tags, no owner, no review</span></li>
+        <li><span class="item">Idle or orphaned resources</span><span class="note">Volumes still billing for instances deleted months ago</span><span class="stat"><b>83%</b> of container costs are idle</span></li>
+        <li><span class="item">Oversized instances</span><span class="note">Paying for headroom you never touch</span><span class="stat"><b>54%</b> of that idle is overprovisioned capacity</span></li>
+        <li><span class="item">Storage and data transfer</span><span class="note">Snapshots nobody prunes, cross-zone traffic nobody measures</span><span class="stat"><b>~50%</b> of data transfer cost is cross-AZ traffic</span></li>
+        <li><span class="item">Commitments that don't match usage</span><span class="note">Savings Plans bought for a fleet you no longer run</span><span class="stat"><b>29%</b> of companies cover even half their eligible spend</span></li>
+        <li><span class="item">Costs nobody can attribute</span><span class="note">No tags, no owner, no review</span><span class="stat"><b>&lt;10%</b> unallocated is the FinOps starting target</span></li>
       </ul>
+      <p class="sources">Benchmarks from Flexera's <a href="https://www.flexera.com/about-us/press-center/flexera-finds-cloud-value-is-rising-while-ai-waste-grows" target="_blank" rel="noopener">2026 State of the Cloud Report</a>, which puts wasted cloud spend at 29% of the bill, Datadog's <a href="https://www.datadoghq.com/state-of-cloud-costs/" target="_blank" rel="noopener">2024 State of Cloud Costs</a>, and the <a href="https://www.finops.org/wg/percentage-of-costs-associated-with-untagged-csp-cloud-resources/" target="_blank" rel="noopener">FinOps Foundation</a>. Your account is its own case, which is what the review is for.</p>
     </div>
   </section>
 
@@ -622,10 +668,6 @@
         <h3 class="quotes-head">What it's like to work with us</h3>
         <p class="quotes-note">These come from automation and software projects outside AWS. They speak to how he works.</p>
         <div class="quotes">
-          <figure class="quote">
-            <blockquote>“If you combine his tech abilities, his understanding of business, and his work ethic, I think you’d be hard-pressed to find someone better.”</blockquote>
-            <figcaption>Cole Bingham, Wingman Insurance</figcaption>
-          </figure>
           <figure class="quote">
             <blockquote>“I’m able to automate some things that still maintain that high-touch feeling but I don’t have to go do it. It really saved me a ton of time and a lot of brain space. I have a lot more time to sit and think strategically.”</blockquote>
             <figcaption>Jane Garee, Showstopping Sales</figcaption>
