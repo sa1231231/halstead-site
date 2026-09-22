@@ -95,6 +95,10 @@
     line-height: 1.12;
     max-width: 20ch;
   }
+  /* The 20ch measure keeps long headings from running across the page, but a
+     short heading that only just exceeds it reads better unbroken. This lifts
+     the cap; narrow screens still wrap it against the container. */
+  h2.is-wide { max-width: 32ch; }
   h3 {
     font-family: var(--sans);
     font-size: 19px;
@@ -577,7 +581,7 @@
   <section class="band band--raised" aria-labelledby="waste-title">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="waste-title">Where AWS money usually goes</h2>
+        <h2 id="waste-title" class="is-wide">Where AWS money usually goes</h2>
       </div>
       <ul class="waste">
         <li><span class="item">Idle or orphaned resources</span><span class="note">Volumes still billing for instances deleted months ago</span><span class="stat"><b>83%</b> of container costs are idle</span></li>
