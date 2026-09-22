@@ -28,7 +28,7 @@ CACHE = os.path.join(os.path.dirname(__file__), ".fonts")
 
 WORDMARK = "Halstead Systems"
 HEADLINE = "Cut waste from your AWS bill without disrupting production."
-KICKER = "Fixed-scope AWS cost assessment"
+KICKER = "Free 20 minute AWS cost review"
 
 HEADLINE_MAX = 72
 HEADLINE_MIN = 46
