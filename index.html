@@ -116,15 +116,6 @@
   .small { font-size: 15px; color: var(--muted); }
 
   /* Links and buttons */
-  .text-link {
-    color: var(--ink);
-    text-decoration: underline;
-    text-decoration-color: var(--rule);
-    text-underline-offset: 4px;
-    text-decoration-thickness: 1px;
-  }
-  .text-link:hover { text-decoration-color: var(--amber); }
-
   .button {
     display: inline-block;
     background: var(--amber);
@@ -272,24 +263,7 @@
 
   .hero-stack { display: grid; gap: 18px; align-self: center; }
   .hero-stack .panel { align-self: stretch; }
-  /* Photo sits left of the quote; if it ever fails to load the script strips
-     it and the text simply fills the card. */
-  .panel-quote {
-    display: flex;
-    align-items: flex-start;
-    gap: 18px;
-    /* Grid items default to min-width:auto, which would let the photo plus the
-       quote's longest word set a floor wider than a phone. */
-    min-width: 0;
-  }
-  .quote-photo {
-    flex: none;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid var(--rule);
-  }
+  .panel-quote { min-width: 0; }
   .panel-quote blockquote {
     margin: 0;
     min-width: 0;
@@ -298,11 +272,7 @@
     line-height: 1.5;
     color: var(--ink);
   }
-  .panel-quote figcaption {
-    margin-top: 12px;
-    font-size: 13.5px;
-    color: var(--muted);
-  }
+
 
   /* Where the money goes */
   .waste {
@@ -365,79 +335,35 @@
   .sources a:hover { color: var(--amber); text-decoration-color: var(--amber); }
 
   /* Steps */
-  .steps {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 56px;
-    max-width: 920px;
-  }
-  .step { border-top: 2px solid var(--rule); padding-top: 22px; }
-  .step:first-child { border-top-color: var(--amber); }
-  .step-num {
-    display: block;
-    font-family: var(--serif);
-    font-weight: var(--h-weight);
-    font-size: 40px;
-    line-height: 1;
-    color: var(--amber);
-    margin-bottom: 16px;
+  .step {
+    border-top: 2px solid var(--amber);
+    padding-top: 22px;
+    max-width: 52ch;
   }
   .step h3 { margin-bottom: 6px; }
   .step-meta { font-size: 15px; color: var(--muted); margin-bottom: 14px; }
   .step p:last-child { font-size: 17px; max-width: 46ch; }
 
-  .callout {
-    margin-top: 52px;
-    padding: 24px 28px;
-    background: var(--surface);
-    border-left: 2px solid var(--amber);
-    border-radius: 0 6px 6px 0;
-    font-size: 17px;
-    max-width: 68ch;
-  }
-  .callout strong { color: var(--ink); font-weight: 600; }
-
   /* About */
+  /* One sentence of copy, so the photo is sized and centred to sit level with
+     it rather than towering over three lines of text. */
   .about {
     display: grid;
-    grid-template-columns: 176px minmax(0, 1fr);
-    gap: 40px;
-    align-items: start;
+    grid-template-columns: 128px minmax(0, 1fr);
+    gap: 32px;
+    align-items: center;
   }
   /* The photo is optional and removes itself when the file is missing. Without
      this the text would drop into the 176px photo column and set as a ribbon. */
   .about.is-photoless { grid-template-columns: minmax(0, 1fr); }
   .about-photo {
-    width: 176px;
-    height: 176px;
+    width: 128px;
+    height: 128px;
     object-fit: cover;
     border-radius: 10px;
     border: 1px solid var(--rule);
   }
-  .about-text h2 { margin-bottom: 22px; }
-  .about-text p { max-width: 60ch; }
-  .about-text p + p { margin-top: 18px; }
-
-  .proof {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
-    margin: 64px 0 0;
-  }
-  .proof div { border-top: 1px solid var(--rule); padding-top: 18px; }
-  .proof dt {
-    font-family: var(--serif);
-    font-weight: var(--h-weight);
-    letter-spacing: var(--h-track);
-    font-size: clamp(32px, 3.4vw, 44px);
-    line-height: 1.08;
-    color: var(--ink);
-    margin-bottom: 10px;
-  }
-  .proof dd { margin: 0; font-size: 15px; line-height: 1.5; color: var(--muted); }
+  .about-line { font-size: 19px; line-height: 1.55; max-width: 54ch; color: var(--body); }
 
   /* Quotes */
   .quotes-block { margin-top: 64px; }
@@ -459,10 +385,29 @@
     color: var(--ink);
     max-width: 46ch;
   }
-  .quote figcaption {
-    margin-top: 14px;
+  /* Attribution sits under the quote with the photo to its left, so the quote
+     itself keeps the full width of the column. */
+  .quote figcaption, .panel-quote figcaption {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
     font-size: 14px;
+    line-height: 1.4;
     color: var(--muted);
+  }
+  .quote figcaption b, .panel-quote figcaption b {
+    display: block;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .quote-photo {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--rule);
   }
 
   /* FAQ */
@@ -512,8 +457,6 @@
   @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; gap: 48px; }
     h1 { max-width: 18ch; }
-    .steps { grid-template-columns: 1fr; gap: 44px; }
-    .proof { grid-template-columns: 1fr 1fr; gap: 28px 32px; }
     .waste { grid-template-columns: 1fr 1fr; gap: 34px 40px; }
   }
   @media (max-width: 760px) {
@@ -523,13 +466,9 @@
   @media (max-width: 640px) {
     .waste { grid-template-columns: 1fr; gap: 26px; }
     .button { width: 100%; text-align: center; }
-    .callout { padding: 20px 22px; }
     .panel { padding: 20px; }
-    .panel-quote { gap: 14px; }
-    .quote-photo { width: 40px; height: 40px; }
   }
   @media (max-width: 520px) {
-    .proof { grid-template-columns: 1fr; gap: 26px; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -568,9 +507,11 @@
           <p class="figure-note">from the monthly AWS bill of a federal security analytics platform serving 100+ agencies.</p>
         </div>
         <figure class="panel panel-quote">
-          <img class="quote-photo" src="/images/cole-bingham.jpg" alt="Cole Bingham" width="48" height="48" onerror="this.remove();">
           <blockquote>“If you combine his tech abilities, his understanding of business, and his work ethic, I think you’d be hard-pressed to find someone better.”</blockquote>
-          <figcaption>Cole Bingham, Wingman Insurance</figcaption>
+          <figcaption>
+            <img class="quote-photo" src="/images/cole-bingham.jpg" alt="" width="44" height="44" onerror="this.remove();">
+            <span><b>Cole Bingham</b>Wingman Insurance</span>
+          </figcaption>
         </figure>
       </div>
     </div>
@@ -599,55 +540,42 @@
         <h2 id="how-title">How it works</h2>
         <p class="section-lede">For software companies spending $10,000 or more a month on AWS, where nobody owns cloud cost full time and production cannot be disrupted.</p>
       </div>
-      <ol class="steps">
-        <li class="step">
-          <span class="step-num" aria-hidden="true">1</span>
-          <h3>AWS Cost Review</h3>
-          <p class="step-meta">20 minutes, free</p>
-          <p>We go over your spend and what you're running. By the end you'll know whether an assessment is worth doing. If it isn't, we'll tell you.</p>
-        </li>
-        <li class="step">
-          <span class="step-num" aria-hidden="true">2</span>
-          <h3>AWS Cost Assessment</h3>
-          <p class="step-meta">5 business days, fixed fee</p>
-          <p>Read-only access. You get a ranked plan: what to fix, what each fix saves, and what it takes to make it. Yours whether or not you hire us to implement it.</p>
-        </li>
-      </ol>
-      <p class="callout"><strong>The 5 days start when read-only access is granted.</strong> If the plan isn't delivered in that window, we keep working at no additional cost until it is.</p>
+      <div class="step">
+        <h3>AWS Cost Review</h3>
+        <p class="step-meta">20 minutes, free</p>
+        <p>We go over your spend and what you're running. By the end you'll know whether an assessment is worth doing. If it isn't, we'll tell you.</p>
+      </div>
     </div>
   </section>
 
-  <section class="band band--raised" aria-labelledby="about-title">
+  <section class="band band--raised" aria-label="About Halstead Systems">
     <div class="wrap">
       <div class="about">
-        <img class="about-photo" src="/images/sam.jpg" alt="Sam Ashtar" width="176" height="176" loading="lazy" onerror="this.closest('.about').classList.add('is-photoless'); this.remove();">
-        <div class="about-text">
-          <h2 id="about-title">About us</h2>
-          <p>Halstead Systems is led by Sam Ashtar, a platform engineer who has spent the last seven years running AWS infrastructure for federal agencies and large organizations. Public Trust cleared.</p>
-          <p>The $68K/month came off orphaned EBS volumes, automated cleanup so they stopped accumulating, and restructured EC2 Savings Plan commitments. Those three are the first things we look for in any account.</p>
-          <p>You work directly with the engineer doing the work, from the review call through implementation.</p>
-          <p><a class="text-link" href="https://www.linkedin.com/in/samseew" target="_blank" rel="noopener">LinkedIn</a></p>
-        </div>
+        <img class="about-photo" src="/images/sam.jpg" alt="Sam Ashtar" width="128" height="128" loading="lazy" onerror="this.closest('.about').classList.add('is-photoless'); this.remove();">
+        <p class="about-line">Sam Ashtar is a senior platform engineer who has been trusted to run and operate AWS infrastructure for federal agencies and large enterprise organizations.</p>
       </div>
-      <dl class="proof">
-        <div><dt>$68K/month</dt><dd>AWS spend cut on a federal security analytics platform, about 30% of the bill.</dd></div>
-        <div><dt>100+ agencies</dt><dd>Served by platforms he has architected and operated.</dd></div>
-        <div><dt>3 months to 3 days</dt><dd>AWS access provisioning, after redesigning the approval workflow.</dd></div>
-        <div><dt>~150 hours/month</dt><dd>Engineering time recovered by tracing chronic job failures to their root cause.</dd></div>
-      </dl>
       <div class="quotes-block">
         <div class="quotes">
           <figure class="quote">
             <blockquote>“I’m able to automate some things that still maintain that high-touch feeling but I don’t have to go do it. It really saved me a ton of time and a lot of brain space. I have a lot more time to sit and think strategically.”</blockquote>
-            <figcaption>Jane Garee, Showstopping Sales</figcaption>
+            <figcaption>
+            <img class="quote-photo" src="/images/jane-garee.jpg" alt="" width="44" height="44" onerror="this.remove();">
+            <span><b>Jane Garee</b>Showstopping Sales</span>
+          </figcaption>
           </figure>
           <figure class="quote">
             <blockquote>“I feel a lot more confident that the customer’s being taken care of. I was doing it all myself and I shouldn’t have to spend so much time. You had it in your brain before we even did it on a whiteboard.”</blockquote>
-            <figcaption>Jeffrey Melara, Melara’s Coffee</figcaption>
+            <figcaption>
+            <img class="quote-photo" src="/images/jeffrey-melara.jpg" alt="" width="44" height="44" onerror="this.remove();">
+            <span><b>Jeffrey Melara</b>Melara’s Coffee</span>
+          </figcaption>
           </figure>
           <figure class="quote">
             <blockquote>“The process is sped up and it requires less of me. You move things forward in a reliable way.”</blockquote>
-            <figcaption>Kristen Alvarez, Happy Paws</figcaption>
+            <figcaption>
+            <img class="quote-photo" src="/images/kristen-alvarez.jpg" alt="" width="44" height="44" onerror="this.remove();">
+            <span><b>Kristen Alvarez</b>Happy Paws</span>
+          </figcaption>
           </figure>
         </div>
       </div>
