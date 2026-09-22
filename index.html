@@ -304,6 +304,9 @@
     align-items: center;
     gap: 14px 22px;
   }
+  /* The closing row has the full page width to spread across, so the subtext
+     would drift far from the button. Stack it the way the hero does. */
+  .closing .cta-row { flex-direction: column; align-items: flex-start; gap: 14px; }
 
   /* Hero proof panel */
   .panel {
@@ -421,9 +424,10 @@
     padding-top: 22px;
     max-width: 52ch;
   }
-  .step h3 { margin-bottom: 6px; }
   .step-meta { font-size: 15px; color: var(--muted); margin-bottom: 14px; }
-  .step p:last-child { font-size: 17px; max-width: 46ch; }
+  .step p:not(.step-meta) { font-size: 17px; max-width: 52ch; }
+  .step p + p { margin-top: 16px; }
+  .step .cta-row { margin-top: 28px; }
 
   /* About */
   /* One sentence of copy, so the photo is sized and centred to sit level with
@@ -611,7 +615,7 @@
         <li><span class="item">Storage and data transfer</span><span class="note">Snapshots nobody prunes, cross-zone traffic nobody measures</span><span class="stat"><b>~50%</b> of data transfer cost is cross-AZ traffic</span></li>
         <li><span class="item">Commitments that don't match usage</span><span class="note">Savings Plans bought for a fleet you no longer run</span><span class="stat"><b>29%</b> of companies cover even half their eligible spend</span></li>
       </ul>
-      <p class="sources">Figures from <a href="https://www.datadoghq.com/state-of-cloud-costs/" target="_blank" rel="noopener">Datadog 2024</a> and <a href="https://www.flexera.com/about-us/press-center/flexera-finds-cloud-value-is-rising-while-ai-waste-grows" target="_blank" rel="noopener">Flexera 2026</a>. Your account is its own case.</p>
+      <p class="sources">Figures from <a href="https://www.datadoghq.com/state-of-cloud-costs/" target="_blank" rel="noopener">Datadog 2024</a> and <a href="https://www.flexera.com/about-us/press-center/flexera-finds-cloud-value-is-rising-while-ai-waste-grows" target="_blank" rel="noopener">Flexera 2026</a>.</p>
     </div>
   </section>
 
@@ -619,18 +623,24 @@
     <div class="wrap">
       <div class="section-head">
         <h2 id="how-title">How it works</h2>
-        <p class="section-lede">For software companies spending $10,000 or more a month on AWS, where nobody owns cloud cost full time and production cannot be disrupted.</p>
+        <p class="section-lede">If you're spending $10,000 or more on AWS, there may be lots of opportunities to save on costs.</p>
       </div>
       <div class="step">
-        <h3>AWS Cost Review</h3>
         <p class="step-meta">20 minutes, free</p>
-        <p>We go over your spend and what you're running. By the end you'll know whether an assessment is worth doing. If it isn't, we'll tell you.</p>
+        <p>We go over your spend and what you're running, and we look for the patterns above in your account. By the end you'll know whether there is enough waste to be worth chasing and what it would take to go after it. If there isn't, we'll tell you on the call.</p>
+        <p>Nothing to install, and no access to your console.</p>
+        <div class="cta-row">
+          <a class="button" href="https://cal.com/sam-e/aws-cost-review" target="_blank" rel="noopener">Book a free AWS cost review</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="band band--raised" aria-label="About Halstead Systems">
+  <section class="band band--raised" aria-labelledby="founder-title">
     <div class="wrap">
+      <div class="section-head">
+        <h2 id="founder-title">Founder</h2>
+      </div>
       <div class="about">
         <img class="about-photo" src="/images/sam.jpg" alt="Sam Ashtar" width="128" height="128" loading="lazy" onerror="this.closest('.about').classList.add('is-photoless'); this.remove();">
         <p class="about-line">Sam Ashtar is a senior platform engineer who has been trusted to run and operate AWS infrastructure for federal agencies and large enterprise organizations.</p>
@@ -694,7 +704,7 @@
       <h2 id="closing-title">Find out whether there is anything worth cutting.</h2>
       <div class="cta-row">
         <a class="button" href="https://cal.com/sam-e/aws-cost-review" target="_blank" rel="noopener">Book a free AWS cost review</a>
-        <span class="small">20 minutes. No console access needed.</span>
+        <span class="small">Free. No console access needed.</span>
       </div>
     </div>
   </section>
