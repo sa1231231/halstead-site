@@ -40,6 +40,7 @@
     --muted: #8A929D;
     --amber: #E3A93E;
     --amber-hover: #EDB85A;
+    --green: #5FC98B;
     --on-amber: #1A1307;
 
     --serif: "Geist", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -232,84 +233,29 @@
     background: var(--surface);
     border: 1px solid var(--rule);
     border-radius: 8px;
-    padding: 26px;
-  }
-  .panel-label {
-    display: block;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .09em;
-    text-transform: uppercase;
-    color: var(--amber);
+    padding: clamp(24px, 3vw, 36px);
+    /* The card is much shorter than the headline column now that it holds one
+       number. Centring it in the row keeps the two sides visually balanced. */
+    align-self: center;
   }
   /* Hero figure: the one number the page leads with. Sans, like everything
-     else, and proportional figures so the digits do not sit loose. */
+     else, and proportional figures so the digits do not sit loose. Green is
+     stepped to the amber's contrast so the two accents read as equals. */
   .figure-hero {
     display: block;
-    margin-top: 16px;
-    font-size: clamp(48px, 5.4vw, 62px);
+    font-size: clamp(42px, 4.9vw, 60px);
     font-weight: 600;
-    line-height: 1;
+    line-height: 1.02;
     letter-spacing: var(--h1-track);
-    color: var(--ink);
+    color: var(--green);
     font-variant-numeric: proportional-nums;
   }
   .figure-note {
-    margin-top: 12px;
-    font-size: 16px;
+    margin-top: 18px;
+    font-size: 17px;
     line-height: 1.5;
     color: var(--body);
-    max-width: 34ch;
-  }
-
-  /* Meter: one ratio against the whole. The unfilled track is a dim step of
-     the same amber, so the bar reads as one scale instead of two colours. */
-  .meter {
-    margin-top: 22px;
-    height: 10px;
-    border-radius: 5px;
-    background: rgba(227, 169, 62, .16);
-    overflow: hidden;
-  }
-  .meter-fill {
-    height: 100%;
-    width: 30%;
-    background: var(--amber);
-    border-radius: 5px;
-  }
-  .meter-key {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    margin-top: 10px;
-    font-size: 13px;
-    color: var(--muted);
-  }
-  .meter-key b { color: var(--ink); font-weight: 600; }
-
-  .did {
-    list-style: none;
-    margin: 24px 0 0;
-    padding: 22px 0 0;
-    border-top: 1px solid var(--rule);
-  }
-  .did li {
-    position: relative;
-    padding-left: 18px;
-    font-size: 14.5px;
-    line-height: 1.45;
-    color: var(--muted);
-  }
-  .did li + li { margin-top: 10px; }
-  .did li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 8px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--amber);
+    max-width: 32ch;
   }
 
   /* Where the money goes */
@@ -609,26 +555,16 @@
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <h1 id="hero-title">Cut waste from your AWS bill without disrupting production.</h1>
-        <p class="lede">A fixed-scope AWS cost assessment for SaaS and software companies. You get a ranked plan showing where the money is going, what each fix is worth, and what it takes to make it.</p>
+        <p class="lede">A fixed-scope assessment for SaaS and software companies. Read-only access, five business days, and a ranked plan of what to fix, what each fix is worth, and what it takes to make it.</p>
         <div class="cta-row">
           <a class="button" href="https://cal.com/sam-e/aws-cost-review" target="_blank" rel="noopener">Book a free AWS cost review</a>
           <span class="small">20 minutes. No console access needed.</span>
         </div>
       </div>
 
-      <div class="panel" aria-labelledby="proof-label">
-        <span class="panel-label" id="proof-label">One engagement</span>
+      <div class="panel">
         <span class="figure-hero">$68K/month</span>
-        <p class="figure-note">Removed from the AWS bill of a federal security analytics platform serving 100+ agencies.</p>
-        <div class="meter" role="img" aria-label="About 30 percent of the monthly AWS bill removed.">
-          <div class="meter-fill"></div>
-        </div>
-        <p class="meter-key"><span><b>30%</b> of the monthly bill removed</span><span>70% remaining</span></p>
-        <ul class="did">
-          <li>Orphaned EBS volumes decommissioned</li>
-          <li>Cleanup automated so they stopped accumulating</li>
-          <li>EC2 Savings Plan commitments restructured across production and lower environments</li>
-        </ul>
+        <p class="figure-note">Cut from the monthly AWS bill of a federal security analytics platform serving 100+ agencies.</p>
       </div>
     </div>
   </section>
@@ -790,7 +726,7 @@
 
   <section class="band band--raised closing" aria-labelledby="closing-title">
     <div class="wrap">
-      <h2 id="closing-title">Find out what your AWS bill is hiding.</h2>
+      <h2 id="closing-title">Find out whether there is anything worth cutting.</h2>
       <div class="cta-row">
         <a class="button" href="https://cal.com/sam-e/aws-cost-review" target="_blank" rel="noopener">Book a free AWS cost review</a>
         <span class="small">20 minutes. No console access needed.</span>
