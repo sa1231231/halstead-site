@@ -226,7 +226,7 @@
   .tile-title { font-family: var(--head); font-weight: 600; font-size: 18px; color: var(--ink); letter-spacing: -0.01em; }
   .tile-type { font-size: 13px; font-weight: 600; color: var(--accent); letter-spacing: 0.02em; white-space: nowrap; }
 
-  /* What I make */
+  /* What we make */
   .make-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.4vw, 28px); }
   .card {
     background: var(--card);
@@ -298,6 +298,9 @@
     color: var(--muted);
     display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
   }
+  .footer-legal { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-legal a { color: var(--muted); text-decoration: none; transition: color 0.15s ease; }
+  .footer-legal a:hover { color: var(--accent); }
 
   /* Responsive */
   @media (max-width: 860px) {
@@ -328,10 +331,10 @@
     <div class="wrap">
       <p class="eyebrow">Halstead Studio</p>
       <h1 id="hero-title">Ads and content for your business, without a film crew.</h1>
-      <p class="lede">I make ad creative, UGC-style videos, and short animations with AI, built from your brand, your products, and your website. You see a sample made for your business before you spend anything.</p>
+      <p class="lede">We make ad creative, UGC-style videos, and short animations with AI, built from your brand, your products, and your website. You see a sample made for your business before you spend anything.</p>
       <div class="cta-row">
         <a class="btn" href="https://cal.com/sam-e/free-sample-ad" target="_blank" rel="noopener">Get a free sample ad</a>
-        <span class="cta-note">Send your website. I'll make a short sample in your brand.</span>
+        <span class="cta-note">Send your website. We'll make a short sample in your brand.</span>
       </div>
     </div>
   </section>
@@ -348,7 +351,7 @@
   <section class="make" aria-labelledby="make-title">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="make-title">What I make</h2>
+        <h2 id="make-title">What we make</h2>
       </div>
       <div class="make-grid">
         <div class="card">
@@ -386,7 +389,7 @@
         </li>
         <li>
           <span class="n">2</span>
-          <h3>I make a sample</h3>
+          <h3>We make a sample</h3>
           <p>A short piece in your colors, fonts, and voice, built from what's already on your site.</p>
         </li>
         <li>
@@ -421,7 +424,7 @@
       <div class="faq">
         <details>
           <summary>Is this made with AI?</summary>
-          <p>Yes. I use AI tools for the footage and animation, and I handle the direction, script, and editing so it looks and sounds like your brand.</p>
+          <p>Yes. We use AI tools for the footage and animation, and we handle the direction, script, and editing so it looks and sounds like your brand.</p>
         </details>
         <details>
           <summary>Who owns the content?</summary>
@@ -437,7 +440,7 @@
         </details>
         <details>
           <summary>Do you use actual people's faces or voices?</summary>
-          <p>No. Presenters are AI-generated and labeled that way, and I won't imitate an actual person.</p>
+          <p>No. Presenters are AI-generated and labeled that way, and we won't imitate an actual person.</p>
         </details>
         <details>
           <summary>How fast is it?</summary>
@@ -460,6 +463,10 @@
 <footer>
   <div class="wrap site-footer">
     <span>&copy; 2026 Halstead Systems</span>
+    <span class="footer-legal">
+      <a href="/studio/terms">Terms &amp; Conditions</a>
+      <a href="/studio/privacy">Privacy Policy</a>
+    </span>
   </div>
 </footer>
 
