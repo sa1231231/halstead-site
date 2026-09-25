@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI ad and video content | Halstead Studio</title>
+<meta name="description" content="Ad creative, UGC-style videos, and animations for your business, made with AI and directed by a person. Get a free sample made from your website.">
+<link rel="canonical" href="https://halsteadsystems.com/studio">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#F6F1EA">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Halstead Studio">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="AI ad and video content | Halstead Studio">
+<meta property="og:description" content="Ad creative, UGC-style videos, and animations for your business, made with AI and directed by a person. Get a free sample made from your website.">
+<meta property="og:url" content="https://halsteadsystems.com/studio">
+<meta property="og:image" content="https://halsteadsystems.com/og-studio.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Halstead Studio. Ads and content for your business, without a film crew.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI ad and video content | Halstead Studio">
+<meta name="twitter:description" content="Ad creative, UGC-style videos, and animations for your business, made with AI and directed by a person. Get a free sample made from your website.">
+<meta name="twitter:image" content="https://halsteadsystems.com/og-studio.png">
+<meta name="twitter:image:alt" content="Halstead Studio. Ads and content for your business, without a film crew.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F6F1EA'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia,serif' font-size='40' fill='%23FF5A36'%3EH%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* Halstead Studio: self-contained styles. This page has its own visual
+     identity and shares no CSS with the homepage or /ai. */
+  :root {
+    --bg: #F6F1EA;
+    --card: #FFFDF9;
+    --ink: #1A1714;
+    --body: #4B443C;
+    --muted: #857B70;
+    --accent: #FF5A36;
+    --accent-ink: #FFFFFF;
+    --accent-hover: #E8461F;
+    --accent-tint: #FBE3DA;
+    --line: #E7DCCE;
+
+    --head: "Bricolage Grotesque", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --body-font: "DM Sans", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    --wrap: 1120px;
+    --gutter: clamp(20px, 5vw, 56px);
+    --section: clamp(72px, 9vw, 120px);
+    --r-tile: 16px;
+    --r-card: 16px;
+    --r-btn: 10px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--body);
+    font-family: var(--body-font);
+    font-size: 18px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  p { margin: 0; }
+  a { color: inherit; }
+  img { max-width: 100%; }
+
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: var(--gutter); }
+
+  h1, h2, h3 {
+    font-family: var(--head);
+    color: var(--ink);
+    margin: 0;
+    font-weight: 700;
+  }
+  h1 {
+    font-size: clamp(38px, 6vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    max-width: 16ch;
+  }
+  h2 {
+    font-size: clamp(28px, 3.4vw, 44px);
+    line-height: 1.06;
+    letter-spacing: -0.028em;
+    max-width: 20ch;
+  }
+  h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.018em; }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-family: var(--body-font);
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1;
+    text-decoration: none;
+    padding: 18px 26px;
+    border-radius: var(--r-btn);
+    border: 1px solid var(--accent);
+    transition: background-color .15s ease, border-color .15s ease, transform .15s ease;
+  }
+  .btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+  .btn:active { transform: translateY(1px); }
+  .btn--sm { padding: 12px 18px; font-size: 15px; }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+  /* Header */
+  .studio-header { border-bottom: 1px solid var(--line); background: var(--bg); }
+  .header-inner {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px; padding-block: 16px;
+  }
+  .wordmark {
+    font-family: var(--head);
+    font-weight: 800;
+    font-size: 23px;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .wordmark .dot { color: var(--accent); }
+
+  /* Sections */
+  section { padding-block: var(--section); }
+  .section-head { margin-bottom: 40px; }
+  .eyebrow {
+    font-family: var(--body-font);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+
+  /* Hero */
+  .hero { padding-top: clamp(44px, 6vw, 84px); padding-bottom: var(--section); }
+  .hero .lede {
+    margin-top: 24px;
+    font-size: clamp(18px, 2vw, 21px);
+    line-height: 1.55;
+    max-width: 58ch;
+    color: var(--body);
+  }
+  .cta-row { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
+  .cta-note { font-size: 15px; color: var(--muted); }
+  .closing .cta-row { margin-top: 28px; }
+
+  /* Recent work: the largest visual block after the hero */
+  .work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(24px, 3vw, 40px);
+  }
+  .tile { margin: 0; }
+  .media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--r-tile);
+    overflow: hidden;
+    background: #EDE3D6;
+    border: 1px solid var(--line);
+  }
+  .media video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .media--empty {
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    background: repeating-linear-gradient(135deg, #EFE6DA, #EFE6DA 14px, #EAE0D2 14px, #EAE0D2 28px);
+  }
+  .media--empty span {
+    font-family: var(--head);
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+    color: var(--muted);
+    padding: 12px 18px;
+  }
+  .ai-badge {
+    position: absolute;
+    left: 12px; bottom: 12px;
+    background: rgba(26, 23, 20, .82);
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    padding: 6px 10px;
+    border-radius: 999px;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+  .play-btn {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 66px; height: 66px;
+    border-radius: 50%;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 20px rgba(26,23,20,.25);
+  }
+  .play-btn svg { width: 24px; height: 24px; margin-left: 3px; }
+  .tile-cap {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 16px; margin-top: 14px;
+  }
+  .tile-title { font-family: var(--head); font-weight: 600; font-size: 18px; color: var(--ink); letter-spacing: -0.01em; }
+  .tile-type { font-size: 13px; font-weight: 600; color: var(--accent); letter-spacing: 0.02em; white-space: nowrap; }
+
+  /* What I make */
+  .make-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.4vw, 28px); }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--r-card);
+    padding: clamp(24px, 3vw, 34px);
+  }
+  .card h3 { margin-bottom: 12px; }
+  .card p { font-size: 16px; line-height: 1.55; color: var(--body); }
+
+  /* Accent band */
+  .band-line { background: var(--accent-tint); }
+  .band-line .wrap { text-align: center; }
+  .band-line p {
+    font-family: var(--head);
+    font-weight: 700;
+    font-size: clamp(28px, 4.4vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    max-width: 20ch;
+    margin: 0 auto;
+  }
+
+  /* How it works */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 3vw, 40px); }
+  .steps li { border-top: 3px solid var(--accent); padding-top: 18px; }
+  .steps .n { display: block; font-family: var(--head); font-weight: 700; font-size: 15px; color: var(--accent); margin-bottom: 12px; }
+  .steps h3 { margin-bottom: 8px; }
+  .steps p { font-size: 16px; line-height: 1.5; color: var(--body); }
+  .how .cta-row { margin-top: 48px; }
+
+  /* Who makes it */
+  .maker { display: grid; grid-template-columns: 148px minmax(0, 1fr); gap: 32px; align-items: center; }
+  .maker.is-photoless { grid-template-columns: minmax(0, 1fr); }
+  .maker img { width: 148px; height: 148px; border-radius: 20px; object-fit: cover; border: 1px solid var(--line); }
+  .maker p { font-size: clamp(19px, 2.2vw, 24px); line-height: 1.45; color: var(--ink); font-family: var(--head); font-weight: 600; letter-spacing: -0.015em; max-width: 30ch; }
+
+  /* FAQ */
+  .faq { border-top: 1px solid var(--line); max-width: 820px; }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary {
+    list-style: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+    padding-block: 22px;
+    color: var(--ink); font-family: var(--head); font-weight: 600; font-size: 19px; letter-spacing: -0.01em;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: ""; flex-shrink: 0; width: 13px; height: 13px;
+    background:
+      linear-gradient(var(--accent), var(--accent)) center / 13px 2.5px no-repeat,
+      linear-gradient(var(--accent), var(--accent)) center / 2.5px 13px no-repeat;
+    transition: transform .2s ease;
+  }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq details p { padding-bottom: 24px; max-width: 64ch; font-size: 17px; color: var(--body); }
+
+  /* Closing */
+  .closing .wrap { text-align: center; }
+  .closing h2 { margin: 0 auto; }
+  .closing .cta-row { justify-content: center; }
+
+  /* Footer */
+  footer { border-top: 1px solid var(--line); }
+  .site-footer {
+    padding-block: 30px;
+    font-size: 14px;
+    color: var(--muted);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+
+  /* Responsive */
+  @media (max-width: 860px) {
+    .make-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; gap: 28px; }
+  }
+  @media (max-width: 680px) {
+    .work-grid { grid-template-columns: 1fr; }
+    .maker { grid-template-columns: 1fr; gap: 22px; text-align: left; }
+    .cta-row .btn { width: 100%; text-align: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="studio-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="/studio">Halstead Studio<span class="dot">.</span></a>
+    <a class="btn btn--sm" href="https://cal.com/sam-e/free-sample-ad" target="_blank" rel="noopener">Get a free sample</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <p class="eyebrow">Halstead Studio</p>
+      <h1 id="hero-title">Ads and content for your business, without a film crew.</h1>
+      <p class="lede">I make ad creative, UGC-style videos, and short animations with AI, built from your brand, your products, and your website. You see a sample made for your business before you spend anything.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://cal.com/sam-e/free-sample-ad" target="_blank" rel="noopener">Get a free sample ad</a>
+        <span class="cta-note">Send your website. I'll make a short sample in your brand.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="work-title">Recent work</h2>
+      </div>
+      <div class="work-grid" id="work-grid"></div>
+    </div>
+  </section>
+
+  <section class="make" aria-labelledby="make-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="make-title">What I make</h2>
+      </div>
+      <div class="make-grid">
+        <div class="card">
+          <h3>Ads</h3>
+          <p>Short video ads for Instagram, Facebook, TikTok, and YouTube, cut to the formats each platform wants.</p>
+        </div>
+        <div class="card">
+          <h3>UGC-style videos</h3>
+          <p>A presenter walking through your product the way a creator would, clearly labeled as AI-generated.</p>
+        </div>
+        <div class="card">
+          <h3>Animations</h3>
+          <p>Explainers, product demos, and motion graphics for your website and social.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-line" aria-hidden="false">
+    <div class="wrap">
+      <p>Made with AI, directed by a person.</p>
+    </div>
+  </section>
+
+  <section class="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="how-title">How it works</h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="n">1</span>
+          <h3>Send your website</h3>
+          <p>Book a short call and drop your link in the form.</p>
+        </li>
+        <li>
+          <span class="n">2</span>
+          <h3>I make a sample</h3>
+          <p>A short piece in your colors, fonts, and voice, built from what's already on your site.</p>
+        </li>
+        <li>
+          <span class="n">3</span>
+          <h3>Keep it going</h3>
+          <p>If you like it, we set a monthly plan for a set number of pieces.</p>
+        </li>
+      </ol>
+      <div class="cta-row">
+        <a class="btn" href="https://cal.com/sam-e/free-sample-ad" target="_blank" rel="noopener">Get a free sample ad</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="who" aria-labelledby="who-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="who-title">Who makes it</h2>
+      </div>
+      <div class="maker">
+        <img src="/images/sam.jpg" alt="Sam Ashtar" width="148" height="148" loading="lazy" onerror="this.closest('.maker').classList.add('is-photoless'); this.remove();">
+        <p>I'm Sam Ashtar. I build with AI, and I direct every piece myself: the script, the visuals, the edit, and making sure it looks like your brand. You work with me directly from the first sample on.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="faq-title">Common questions</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Is this made with AI?</summary>
+          <p>Yes. I use AI tools for the footage and animation, and I handle the direction, script, and editing so it looks and sounds like your brand.</p>
+        </details>
+        <details>
+          <summary>Who owns the content?</summary>
+          <p>You do, once it's paid for.</p>
+        </details>
+        <details>
+          <summary>What do you need from me?</summary>
+          <p>Your website, your logo, and any product photos you like. That's usually enough to start.</p>
+        </details>
+        <details>
+          <summary>How much does it cost?</summary>
+          <p>Plans are quoted on the call, based on how many pieces you want each month.</p>
+        </details>
+        <details>
+          <summary>Do you use actual people's faces or voices?</summary>
+          <p>No. Presenters are AI-generated and labeled that way, and I won't imitate an actual person.</p>
+        </details>
+        <details>
+          <summary>How fast is it?</summary>
+          <p>Your first sample within a few business days. Monthly pieces arrive on a schedule we agree on.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" aria-labelledby="closing-title">
+    <div class="wrap">
+      <h2 id="closing-title">See your brand in motion.</h2>
+      <div class="cta-row">
+        <a class="btn" href="https://cal.com/sam-e/free-sample-ad" target="_blank" rel="noopener">Get a free sample ad</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap site-footer">
+    <span>&copy; 2026 Halstead Systems</span>
+    <span>Richmond, Virginia</span>
+  </div>
+</footer>
+
+<script>
+  /* Sample work tiles. Edit this array to change the grid: each entry needs a
+     video file, a poster image, a title, and a type. Type must be one of
+     "Ad", "UGC-style video", or "Animation". A tile whose type is
+     "UGC-style video" shows an "AI-generated presenter" label on the video.
+     If a video file is missing, its tile shows a "New sample coming soon"
+     placeholder instead of a broken player. */
+  var SAMPLES = [
+    { file: "/studio/media/sample-1.mp4", poster: "/studio/media/sample-1.jpg", title: "Skincare launch", type: "Ad" },
+    { file: "/studio/media/sample-2.mp4", poster: "/studio/media/sample-2.jpg", title: "App walkthrough", type: "UGC-style video" },
+    { file: "/studio/media/sample-3.mp4", poster: "/studio/media/sample-3.jpg", title: "Product explainer", type: "Animation" },
+    { file: "/studio/media/sample-4.mp4", poster: "/studio/media/sample-4.jpg", title: "Weekend promo", type: "Ad" }
+  ];
+
+  (function () {
+    var grid = document.getElementById("work-grid");
+    if (!grid) return;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var io = ("IntersectionObserver" in window) ? new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var v = entry.target;
+        if (entry.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        else { v.pause(); }
+      });
+    }, { threshold: 0.35 }) : null;
+
+    function esc(s) {
+      return String(s).replace(/[&<>"]/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+      });
+    }
+    function captionHTML(sample) {
+      return '<figcaption class="tile-cap"><span class="tile-title">' + esc(sample.title) +
+        '</span><span class="tile-type">' + esc(sample.type) + "</span></figcaption>";
+    }
+    function emptyMedia() {
+      var d = document.createElement("div");
+      d.className = "media media--empty";
+      d.innerHTML = "<span>New sample coming soon</span>";
+      return d;
+    }
+
+    SAMPLES.forEach(function (sample) {
+      var fig = document.createElement("figure");
+      fig.className = "tile";
+
+      var media = document.createElement("div");
+      media.className = "media";
+
+      var video = document.createElement("video");
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.setAttribute("muted", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("loop", "");
+      video.preload = "metadata";
+      if (sample.poster) video.poster = sample.poster;
+
+      var failed = false;
+      video.addEventListener("error", onFail);
+      function onFail() {
+        if (failed) return;
+        failed = true;
+        if (io) { try { io.unobserve(video); } catch (e) {} }
+        media.replaceWith(emptyMedia());
+      }
+
+      video.src = sample.file;
+      media.appendChild(video);
+
+      if (sample.type === "UGC-style video") {
+        var badge = document.createElement("span");
+        badge.className = "ai-badge";
+        badge.textContent = "AI-generated presenter";
+        media.appendChild(badge);
+      }
+
+      if (reduce) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "play-btn";
+        btn.setAttribute("aria-label", "Play " + sample.title);
+        btn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
+        btn.addEventListener("click", function () {
+          var p = video.play(); if (p && p.catch) p.catch(function () {});
+          btn.remove();
+        });
+        media.appendChild(btn);
+      } else if (io) {
+        io.observe(video);
+      } else {
+        var p = video.play(); if (p && p.catch) p.catch(function () {});
+      }
+
+      fig.appendChild(media);
+      fig.insertAdjacentHTML("beforeend", captionHTML(sample));
+      grid.appendChild(fig);
+    });
+  })();
+</script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>
