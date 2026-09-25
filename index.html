@@ -593,6 +593,17 @@
     flex-wrap: wrap;
     gap: 12px;
   }
+  .footer-legal {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-legal a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .footer-legal a:hover { color: var(--amber); }
 
   /* Responsive */
   @media (max-width: 900px) {
@@ -798,7 +809,10 @@
 <footer>
   <div class="wrap site-footer">
     <span>&copy; 2026 Halstead Systems</span>
-    <span>Richmond, Virginia</span>
+    <span class="footer-legal">
+      <a href="/terms">Terms &amp; Conditions</a>
+      <a href="/privacy">Privacy Policy</a>
+    </span>
   </div>
 </footer>
 
