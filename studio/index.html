@@ -43,7 +43,6 @@
     --accent: #FF5A36;
     --accent-ink: #FFFFFF;
     --accent-hover: #E8461F;
-    --accent-tint: #FBE3DA;
     --line: #E7DCCE;
 
     --head: "Bricolage Grotesque", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -219,21 +218,7 @@
   .tile-title { font-family: var(--head); font-weight: 600; font-size: 18px; color: var(--ink); letter-spacing: -0.01em; }
   .tile-type { font-size: 13px; font-weight: 600; color: var(--accent); letter-spacing: 0.02em; white-space: nowrap; }
 
-  /* Accent band */
-  .band-line { background: var(--accent-tint); }
-  .band-line .wrap { text-align: center; }
-  .band-line p {
-    font-family: var(--head);
-    font-weight: 700;
-    font-size: clamp(28px, 4.4vw, 52px);
-    line-height: 1.08;
-    letter-spacing: -0.03em;
-    color: var(--ink);
-    max-width: 20ch;
-    margin: 0 auto;
-  }
-
-  /* Who makes it */
+  /* Founder's note */
   .maker { display: grid; grid-template-columns: 148px minmax(0, 1fr); gap: 32px; align-items: center; }
   .maker.is-photoless { grid-template-columns: minmax(0, 1fr); }
   .maker img { width: 148px; height: 148px; border-radius: 20px; object-fit: cover; border: 1px solid var(--line); }
@@ -317,16 +302,10 @@
     </div>
   </section>
 
-  <section class="band-line" aria-hidden="false">
-    <div class="wrap">
-      <p>Made with AI, directed by a person.</p>
-    </div>
-  </section>
-
-  <section class="who" aria-labelledby="who-title">
+  <section class="who" aria-labelledby="founder-title">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="who-title">Who makes it</h2>
+        <h2 id="founder-title">Founder's note</h2>
       </div>
       <div class="maker">
         <img src="/images/sam.jpg" alt="Sam Ashtar" width="148" height="148" loading="lazy" onerror="this.closest('.maker').classList.add('is-photoless'); this.remove();">
@@ -359,7 +338,7 @@
         </details>
         <details>
           <summary>Do you use actual people's faces or voices?</summary>
-          <p>No. Presenters are AI-generated and labeled that way, and we won't imitate an actual person.</p>
+          <p>By default, presenters are AI-generated and labeled that way. We won't copy a specific person's face or voice without their permission. If you want to feature someone's likeness, such as your own or a person who has given consent, we can build with it once the rights are in place.</p>
         </details>
         <details>
           <summary>How fast is it?</summary>
