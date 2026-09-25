@@ -136,18 +136,9 @@
   /* Sections */
   section { padding-block: var(--section); }
   .section-head { margin-bottom: 40px; }
-  .eyebrow {
-    font-family: var(--body-font);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin: 0 0 18px;
-  }
 
   /* Hero */
-  .hero { padding-top: clamp(44px, 6vw, 84px); padding-bottom: var(--section); }
+  .hero { padding-top: clamp(44px, 6vw, 84px); padding-bottom: clamp(28px, 3.5vw, 48px); }
   .hero .lede {
     margin-top: 24px;
     font-size: clamp(18px, 2vw, 21px);
@@ -157,9 +148,11 @@
   }
   .cta-row { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
   .cta-note { font-size: 15px; color: var(--muted); }
+  .hero .cta-note { margin-top: 16px; }
   .closing .cta-row { margin-top: 28px; }
 
   /* Recent work: the largest visual block after the hero */
+  .work { padding-top: clamp(24px, 3vw, 40px); }
   .work-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -226,17 +219,6 @@
   .tile-title { font-family: var(--head); font-weight: 600; font-size: 18px; color: var(--ink); letter-spacing: -0.01em; }
   .tile-type { font-size: 13px; font-weight: 600; color: var(--accent); letter-spacing: 0.02em; white-space: nowrap; }
 
-  /* What we make */
-  .make-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.4vw, 28px); }
-  .card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: var(--r-card);
-    padding: clamp(24px, 3vw, 34px);
-  }
-  .card h3 { margin-bottom: 12px; }
-  .card p { font-size: 16px; line-height: 1.55; color: var(--body); }
-
   /* Accent band */
   .band-line { background: var(--accent-tint); }
   .band-line .wrap { text-align: center; }
@@ -250,14 +232,6 @@
     max-width: 20ch;
     margin: 0 auto;
   }
-
-  /* How it works */
-  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 3vw, 40px); }
-  .steps li { border-top: 3px solid var(--accent); padding-top: 18px; }
-  .steps .n { display: block; font-family: var(--head); font-weight: 700; font-size: 15px; color: var(--accent); margin-bottom: 12px; }
-  .steps h3 { margin-bottom: 8px; }
-  .steps p { font-size: 16px; line-height: 1.5; color: var(--body); }
-  .how .cta-row { margin-top: 48px; }
 
   /* Who makes it */
   .maker { display: grid; grid-template-columns: 148px minmax(0, 1fr); gap: 32px; align-items: center; }
@@ -303,10 +277,6 @@
   .footer-legal a:hover { color: var(--accent); }
 
   /* Responsive */
-  @media (max-width: 860px) {
-    .make-grid { grid-template-columns: 1fr; }
-    .steps { grid-template-columns: 1fr; gap: 28px; }
-  }
   @media (max-width: 680px) {
     .work-grid { grid-template-columns: 1fr; }
     .maker { grid-template-columns: 1fr; gap: 22px; text-align: left; }
@@ -322,20 +292,19 @@
 <header class="studio-header">
   <div class="wrap header-inner">
     <a class="wordmark" href="/studio">Halstead Studio<span class="dot">.</span></a>
-    <a class="btn btn--sm" href="https://cal.com/sam-e/free-sample-ad" target="_blank" rel="noopener">Get a free sample</a>
+    <a class="btn btn--sm" href="https://cal.com/sam-e/free-sample-ad" target="_blank" rel="noopener">Get your free sample</a>
   </div>
 </header>
 
 <main>
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap">
-      <p class="eyebrow">Halstead Studio</p>
       <h1 id="hero-title">Ads and content for your business, without a film crew.</h1>
-      <p class="lede">We make ad creative, UGC-style videos, and short animations with AI, built from your brand, your products, and your website. You see a sample made for your business before you spend anything.</p>
+      <p class="lede">We make ads, UGC-style videos, and short animations, built from your brand, your products, and your website.</p>
       <div class="cta-row">
-        <a class="btn" href="https://cal.com/sam-e/free-sample-ad" target="_blank" rel="noopener">Get a free sample ad</a>
-        <span class="cta-note">Send your website. We'll make a short sample in your brand.</span>
+        <a class="btn" href="https://cal.com/sam-e/free-sample-ad" target="_blank" rel="noopener">Get your free sample</a>
       </div>
+      <p class="cta-note">Free to start. Send your website and we take it from there.</p>
     </div>
   </section>
 
@@ -348,59 +317,9 @@
     </div>
   </section>
 
-  <section class="make" aria-labelledby="make-title">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="make-title">What we make</h2>
-      </div>
-      <div class="make-grid">
-        <div class="card">
-          <h3>Ads</h3>
-          <p>Short video ads for Instagram, Facebook, TikTok, and YouTube, cut to the formats each platform wants.</p>
-        </div>
-        <div class="card">
-          <h3>UGC-style videos</h3>
-          <p>A presenter walking through your product the way a creator would, clearly labeled as AI-generated.</p>
-        </div>
-        <div class="card">
-          <h3>Animations</h3>
-          <p>Explainers, product demos, and motion graphics for your website and social.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="band-line" aria-hidden="false">
     <div class="wrap">
       <p>Made with AI, directed by a person.</p>
-    </div>
-  </section>
-
-  <section class="how" aria-labelledby="how-title">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="how-title">How it works</h2>
-      </div>
-      <ol class="steps">
-        <li>
-          <span class="n">1</span>
-          <h3>Send your website</h3>
-          <p>Book a short call and drop your link in the form.</p>
-        </li>
-        <li>
-          <span class="n">2</span>
-          <h3>We make a sample</h3>
-          <p>A short piece in your colors, fonts, and voice, built from what's already on your site.</p>
-        </li>
-        <li>
-          <span class="n">3</span>
-          <h3>Keep it going</h3>
-          <p>If you like it, we set a monthly plan for a set number of pieces.</p>
-        </li>
-      </ol>
-      <div class="cta-row">
-        <a class="btn" href="https://cal.com/sam-e/free-sample-ad" target="_blank" rel="noopener">Get a free sample ad</a>
-      </div>
     </div>
   </section>
 
@@ -454,7 +373,7 @@
     <div class="wrap">
       <h2 id="closing-title">See your brand in motion.</h2>
       <div class="cta-row">
-        <a class="btn" href="https://cal.com/sam-e/free-sample-ad" target="_blank" rel="noopener">Get a free sample ad</a>
+        <a class="btn" href="https://cal.com/sam-e/free-sample-ad" target="_blank" rel="noopener">Get your free sample</a>
       </div>
     </div>
   </section>
