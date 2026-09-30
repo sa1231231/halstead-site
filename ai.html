@@ -210,7 +210,7 @@
   .hero-grid {
     display: grid;
     grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
-    gap: clamp(32px, 4vw, 56px);
+    gap: clamp(44px, 6vw, 88px);
     align-items: start;
     animation: heroIn .5s ease both;
   }
@@ -274,7 +274,10 @@
   }
   .orgs-names { color: var(--body); }
 
-  .hero-stack { display: grid; gap: 18px; align-self: start; }
+  /* Drop the video column so its CTA lines up with the hero description in the
+     left column, rather than the video topping out level with the eyebrow. */
+  .hero-stack { display: grid; gap: 18px; align-self: start; margin-top: 40px; }
+  @media (max-width: 900px) { .hero-stack { margin-top: 0; } }
   .hero-stack .panel { align-self: stretch; }
   /* VSL: the video leads the hero's right column. Sized to the column, a 16:9
      frame with the same rounded border as the proof panel so the three
