@@ -298,6 +298,14 @@
      up with the frame above it rather than hugging its own text. */
   .hero-stack .cta-row .button { width: 100%; text-align: center; }
   .panel-quote { min-width: 0; }
+  /* The testimonial breaks out of the right column and sits as its own row
+     under the hero: centred, given a wider measure than the video column, and
+     pushed well clear of the grid so it reads as a separate, calmer beat. */
+  .hero-quote {
+    max-width: 760px;
+    margin: clamp(56px, 7vw, 96px) auto 0;
+  }
+  .hero-quote blockquote { font-size: 18px; line-height: 1.55; }
   .panel-quote blockquote {
     margin: 0;
     min-width: 0;
@@ -749,14 +757,16 @@
         <div class="cta-row">
           <a class="button" href="https://cal.com/sam-e/ai" target="_blank" rel="noopener">Book your free AI session</a>
         </div>
-        <figure class="panel panel-quote">
-          <blockquote>“If you combine his tech abilities, his understanding of business, and his work ethic, I think you’d be hard-pressed to find someone better.”</blockquote>
-          <figcaption>
-            <img class="quote-photo" src="/images/cole-bingham.jpg" alt="" width="44" height="44" onerror="this.remove();">
-            <span><b>Cole Bingham</b>Wingman Insurance</span>
-          </figcaption>
-        </figure>
       </div>
+    </div>
+    <div class="wrap">
+      <figure class="panel panel-quote hero-quote">
+        <blockquote>“If you combine his tech abilities, his understanding of business, and his work ethic, I think you’d be hard-pressed to find someone better.”</blockquote>
+        <figcaption>
+          <img class="quote-photo" src="/images/cole-bingham.jpg" alt="" width="44" height="44" onerror="this.remove();">
+          <span><b>Cole Bingham</b>Wingman Insurance</span>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
