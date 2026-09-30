@@ -221,8 +221,10 @@
   .tile--featured { margin: 0 0 clamp(28px, 3.5vw, 44px); }
   .media--wide { aspect-ratio: 16 / 9; background: #1A1714; }
   .media--wide video { object-fit: contain; }
-  /* The three Recent-work animation boxes are square. */
-  .work-grid .media { aspect-ratio: 1 / 1; }
+  /* The three Recent-work animation boxes are 16:9, matching the landscape
+     clips so nothing is cropped. Dark fill shows while the poster loads. */
+  .work-grid .media { aspect-ratio: 16 / 9; background: #1A1714; }
+  .work-grid .media video { object-fit: contain; }
   .tile--featured .tile-title { font-size: 20px; }
 
   /* Founder's note */
