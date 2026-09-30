@@ -221,6 +221,8 @@
   .tile--featured { margin: 0 0 clamp(28px, 3.5vw, 44px); }
   .media--wide { aspect-ratio: 16 / 9; background: #1A1714; }
   .media--wide video { object-fit: contain; }
+  /* The three Recent-work animation boxes are square. */
+  .work-grid .media { aspect-ratio: 1 / 1; }
   .tile--featured .tile-title { font-size: 20px; }
 
   /* Founder's note */
@@ -386,12 +388,11 @@
 </footer>
 
 <script>
-  /* Sample work tiles. Edit this array to change the grid: each entry needs a
-     video file, a poster image, a title, and a type. Type must be one of
-     "Ad", "UGC-style video", or "Animation". A tile whose type is
-     "UGC-style video" shows an "AI-generated presenter" label on the video.
-     If a video file is missing, its tile shows a "New sample coming soon"
-     placeholder instead of a broken player. */
+  /* Recent-work sample tiles. Edit this array to change the grid: each entry
+     needs a video file, a poster image, a title, and a type (e.g. "Animation",
+     "Ad"). Each tile is a square player with native controls, so it plays with
+     sound on click. If a video file is missing, its tile shows a "New sample
+     coming soon" placeholder instead of a broken player. */
   var SAMPLES = [
     { file: "/studio/media/too-small.mp4", poster: "/studio/media/too-small.jpg", title: "Too Small", type: "Animation" },
     { file: "/studio/media/pretty-parts.mp4", poster: "/studio/media/pretty-parts.jpg", title: "Pretty Parts", type: "Animation" },
@@ -401,14 +402,6 @@
   (function () {
     var grid = document.getElementById("work-grid");
     if (!grid) return;
-    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var io = ("IntersectionObserver" in window) ? new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        var v = entry.target;
-        if (entry.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
-        else { v.pause(); }
-      });
-    }, { threshold: 0.35 }) : null;
 
     function esc(s) {
       return String(s).replace(/[&<>"]/g, function (c) {
@@ -434,12 +427,9 @@
       media.className = "media";
 
       var video = document.createElement("video");
-      video.muted = true;
-      video.loop = true;
+      video.controls = true;
       video.playsInline = true;
-      video.setAttribute("muted", "");
       video.setAttribute("playsinline", "");
-      video.setAttribute("loop", "");
       video.preload = "metadata";
       if (sample.poster) video.poster = sample.poster;
 
@@ -448,36 +438,11 @@
       function onFail() {
         if (failed) return;
         failed = true;
-        if (io) { try { io.unobserve(video); } catch (e) {} }
         media.replaceWith(emptyMedia());
       }
 
       video.src = sample.file;
       media.appendChild(video);
-
-      if (sample.type === "UGC-style video") {
-        var badge = document.createElement("span");
-        badge.className = "ai-badge";
-        badge.textContent = "AI-generated presenter";
-        media.appendChild(badge);
-      }
-
-      if (reduce) {
-        var btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "play-btn";
-        btn.setAttribute("aria-label", "Play " + sample.title);
-        btn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
-        btn.addEventListener("click", function () {
-          var p = video.play(); if (p && p.catch) p.catch(function () {});
-          btn.remove();
-        });
-        media.appendChild(btn);
-      } else if (io) {
-        io.observe(video);
-      } else {
-        var p = video.play(); if (p && p.catch) p.catch(function () {});
-      }
 
       fig.appendChild(media);
       fig.insertAdjacentHTML("beforeend", captionHTML(sample));
