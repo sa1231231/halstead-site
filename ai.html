@@ -274,8 +274,29 @@
   }
   .orgs-names { color: var(--body); }
 
-  .hero-stack { display: grid; gap: 18px; align-self: center; }
+  .hero-stack { display: grid; gap: 18px; align-self: start; }
   .hero-stack .panel { align-self: stretch; }
+  /* VSL: the video leads the hero's right column. Sized to the column, a 16:9
+     frame with the same rounded border as the proof panel so the three
+     stacked pieces read as one card set. */
+  .hero-video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .hero-video video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* The CTA sits between the video and the quote; full-width here so it lines
+     up with the frame above it rather than hugging its own text. */
+  .hero-stack .cta-row .button { width: 100%; text-align: center; }
   .panel-quote { min-width: 0; }
   .panel-quote blockquote {
     margin: 0;
@@ -718,11 +739,16 @@
         <p class="eyebrow">For CEOs and founders</p>
         <h1 id="hero-title">Invest One Hour Today.<br>I'll Save You One Hour Per Day.</h1>
         <p class="lede">One session with me, and you're already saving time. I'll show you how to put the full power of AI to work in the way you already work.</p>
+      </div>
+      <div class="hero-stack">
+        <div class="hero-video">
+          <video controls preload="metadata" playsinline poster="/images/vsl-poster.jpg">
+            <source src="/videos/halstead-ai-vsl.mp4" type="video/mp4">
+          </video>
+        </div>
         <div class="cta-row">
           <a class="button" href="https://cal.com/sam-e/ai" target="_blank" rel="noopener">Book your free AI session</a>
         </div>
-      </div>
-      <div class="hero-stack">
         <figure class="panel panel-quote">
           <blockquote>“If you combine his tech abilities, his understanding of business, and his work ethic, I think you’d be hard-pressed to find someone better.”</blockquote>
           <figcaption>
