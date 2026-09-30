@@ -219,7 +219,10 @@
      page, so the headline's first line ("Invest One Hour Today.") sits on one
      line and the video reads larger. Mobile keeps the standard container. */
   @media (min-width: 1100px) {
-    .hero .wrap { max-width: 1400px; }
+    /* Give the whole page the wider container on desktop so the header, hero,
+       and every section share one content width and line up. Mobile keeps the
+       standard 1120px measure. */
+    :root { --wrap: 1400px; }
     .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.06fr); }
     /* Size the headline fluidly to the wider left column so its first sentence
        holds one line across the desktop range; a one-line opener reads cleaner
