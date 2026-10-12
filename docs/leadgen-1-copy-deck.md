@@ -362,7 +362,7 @@ Opens on the buyer's outcome and the demonstration. Credibility right after, fro
 >
 > Either way, I look forward to putting prospects on your calendar.
 
-Screens: 1 calendar with a 20-minute slot / 2 the written bar / 3 a prospect note / 4 a short message thread / 5 the calendar + brief / 6 the ledger / 7 the two cards / 8 the not-for line / 9 the sign-off.
+Screens: 1 calendar with a 20-minute slot / 2 the written bar / 3 a prospect note / 4 a short message thread / 5 the calendar + brief / 6 the ledger / 7 the two cards / 8 the not-for line, held through the closing line (no separate outro screen, so the picture never just repeats what is said).
 
 ---
 
