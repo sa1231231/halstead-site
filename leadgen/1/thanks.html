@@ -52,18 +52,18 @@ fbq('track', 'Purchase', {value: 99.00, currency: 'USD'});
 <body>
 <main>
   <span class="badge">Payment received</span>
-  <h1>You're in. Let's build your bar.</h1>
+  <h1>You're in. Let's build your shortlist.</h1>
   <p>Your $99 is credited to your first meeting. Here's what happens next:</p>
   <ul class="steps">
     <li>Tell me who you want to reach, below. Two minutes.</li>
     <li>Within 48 hours you get your written qualification bar and 10 vetted prospects.</li>
-    <li>When a prospect meets the bar, I put 20 minutes on your calendar and send you a short brief.</li>
+    <li>When a prospect is a real fit, I put 20 minutes on your calendar and send you a short brief.</li>
     <li>You pay $600 only when a meeting actually happens.</li>
   </ul>
 
   <div class="form-card" id="form-card">
     <h2>Who do you want to reach?</h2>
-    <p class="sub">The more exact you are, the sharper the bar. You can change any of it on our first pass.</p>
+    <p class="sub">The more exact you are, the sharper the targeting. You can change any of it on our first pass.</p>
     <form class="intake" action="/api/intake" method="POST" data-kind="pilot" id="pilot-form">
       <input type="hidden" name="kind" value="pilot">
       <label>Work email
@@ -72,16 +72,16 @@ fbq('track', 'Purchase', {value: 99.00, currency: 'USD'});
       <label>Your website
         <input type="url" name="website" placeholder="https://" required>
       </label>
-      <label>Your ideal buyer — title, team size, stack
-        <textarea name="icp" placeholder="e.g. Staff/Principal platform engineers or VP Eng at Series A–B infra SaaS, 20–150 engineers, running Kubernetes + AWS" required></textarea>
+      <label>Your ideal buyer (title, team size, stack)
+        <textarea name="icp" placeholder="e.g. Staff/Principal platform engineers or VP Eng at Series A to B infra SaaS, 20 to 150 engineers, running Kubernetes + AWS" required></textarea>
       </label>
-      <label>Trigger signals — what tells you they're in the market now?
+      <label>Trigger signals: what tells you they're in the market now?
         <textarea name="triggers" placeholder="e.g. hiring SREs, recent migration, new funding, a specific tool in their stack"></textarea>
       </label>
       <label>Your booking link (Cal.com, Calendly, etc.)
         <input type="url" name="calendar" placeholder="https://cal.com/you/intro">
       </label>
-      <button class="button" type="submit">Send and start my bar</button>
+      <button class="button" type="submit">Send and start my pilot</button>
     </form>
   </div>
 

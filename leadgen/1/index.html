@@ -18,7 +18,7 @@
     --bg: #12161C; --raised: #161B22; --surface: #181D25;
     --rule: #2A313B; --rule-soft: #212831;
     --ink: #ECEEF0; --body: #BCC3CC; --muted: #8A929D;
-    --amber: #E3A93E; --amber-hover: #EDB85A; --green: #5FC98B; --on-amber: #1A1307;
+    --amber: #E3A93E; --amber-hover: #EDB85A; --green: #5FC98B; --red: #E0695F; --on-amber: #1A1307;
     --sans: "Geist", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --wrap: 1120px; --gutter: clamp(20px, 5vw, 48px); --section: clamp(64px, 8vw, 104px);
   }
@@ -113,7 +113,8 @@
   .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 48px); margin-top: 8px; }
   .who h3 { margin-bottom: 14px; }
   .who .for::before { background: var(--green); width: 10px; height: 10px; border-radius: 2px; top: 7px; }
-  .who .not::before { background: var(--muted); }
+  /* Negative lists (what you won't get / not for): the red counterpart to the green For markers. */
+  .plain.neg li::before { background: var(--red); width: 10px; height: 10px; border-radius: 2px; top: 7px; }
 
   .guarantee { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: clamp(24px, 3vw, 36px); max-width: 760px; }
   .guarantee h2 { margin-bottom: 16px; }
@@ -180,7 +181,7 @@ fbq('track', 'PageView');
         <h1 id="hero-title">Meetings with engineers who fit. You pay when the meeting happens.</h1>
         <p class="lede">I'm Sam. I'm a cloud engineer. I book qualified meetings for dev tool and cloud infra companies. No retainer. You only pay for the meetings that actually happen.</p>
         <div class="cta-row">
-          <a class="button" href="#start">Start the pilot — $99</a>
+          <a class="button" href="#start">Start the pilot for $99</a>
           <a class="button-secondary" href="#sample">See 3 prospects first, free</a>
         </div>
         <p class="credit-line">Every prospect is found and qualified by a senior cloud engineer who has run the stacks your buyers run.</p>
@@ -189,7 +190,7 @@ fbq('track', 'PageView');
         <div class="hero-video">
           <video src="/leadgen/1/method-draft.mp4" poster="/leadgen/1/method-poster.jpg" controls playsinline preload="metadata"></video>
         </div>
-        <p class="draft-flag">Draft cut — placeholder cards, final screenshots pending.</p>
+        <p class="draft-flag">Draft cut. Placeholder cards, final screenshots pending.</p>
       </div>
     </div>
   </section>
@@ -197,13 +198,14 @@ fbq('track', 'PageView');
   <!-- PROOF STRIP: the finding, in buyers' own words. Other agencies' customers, labeled honestly. -->
   <section class="band band--raised" aria-labelledby="proof-title">
     <div class="wrap">
-      <p id="proof-title" class="proof-intro">I read 49 one-star reviews of the big appointment setting agencies. 22 said the same thing.</p>
+      <p class="eyebrow">Does this sound familiar?</p>
+      <p id="proof-title" class="proof-intro">If you've hired an appointment setting agency before, some of this probably rings true.</p>
       <ul class="proof-quotes">
+        <li>"We paid $20K and they didn't generate a single lead."</li>
         <li>"The reps knew sales but had zero clue about the product."</li>
-        <li>"Prospects could tell right away it wasn't the founder talking."</li>
-        <li>"$20K spent before you can even tell if it's working."</li>
+        <li>"The best part was before we signed the contract."</li>
       </ul>
-      <p class="proof-src">Public reviews of CIENCE, Belkins, Martal and Callbox. Their customers' words, not mine. The whole model here is the opposite: an engineer who knows your product, prospects you can check first, and a bill only when a meeting happens.</p>
+      <p class="proof-src">Real one-star reviews of CIENCE, Belkins, Martal and Callbox. I read 49 of them, and 22 said the same thing: the reps didn't know the product. This works the opposite way. An engineer who knows your product, prospects you can check before you pay, and a bill only when a meeting happens.</p>
     </div>
   </section>
 
@@ -214,8 +216,8 @@ fbq('track', 'PageView');
       <ol class="steps">
         <li><span class="n">Who counts</span><p>We write down who counts. Title, team size, what they run, and a sign they're in the market now. A job post. A migration.</p></li>
         <li><span class="n">Find them</span><p>I find the engineers who fit and read what they ship. Each one gets a note: who they are, what they run, why now.</p></li>
-        <li><span class="n">Write to them</span><p>One engineer to another. No pitch. I've run their stacks, so I can answer the real questions. A few replies tell us if they meet the bar.</p></li>
-        <li><span class="n">Your calendar</span><p>When they meet the bar, I put 20 minutes on your calendar and send you a short brief. You take the meeting. You close it.</p></li>
+        <li><span class="n">Write to them</span><p>One engineer to another. No pitch. I've run their stacks, so I can answer the real questions. A few replies tell us if they're a real fit.</p></li>
+        <li><span class="n">Your calendar</span><p>When they're a real fit, I put 20 minutes on your calendar and send you a short brief. You take the meeting. You close it.</p></li>
       </ol>
     </div>
   </section>
@@ -244,7 +246,7 @@ fbq('track', 'PageView');
               <input type="url" name="website" placeholder="https://" required>
             </label>
             <label>Who do you sell to?
-              <input type="text" name="icp" placeholder="e.g. platform / infra engineers at Series A–B SaaS" required>
+              <input type="text" name="icp" placeholder="e.g. platform / infra engineers at Series A to B SaaS" required>
             </label>
             <label>Work email
               <input type="email" name="email" placeholder="you@company.com" required>
@@ -262,15 +264,16 @@ fbq('track', 'PageView');
           <h3>Start the pilot. $99.</h3>
           <p class="price">Credited to your first meeting.</p>
           <ul>
-            <li>Your written qualification bar and 10 vetted prospects, in 48 hours</li>
+            <li>Your qualification bar in writing: the exact buyer who counts</li>
+            <li>10 vetted prospects, in 48 hours</li>
             <li>Then $600 per meeting that actually happens</li>
             <li>A no-show gets one reschedule, and you're not billed</li>
-            <li>A meeting that misses the bar is credited</li>
+            <li>A meeting that isn't a real fit is credited</li>
             <li>3 meetings in 30 days, or your $99 back</li>
           </ul>
           <div class="cta">
             <!-- Stripe payment link ($99, test mode until go-live) → /leadgen/1/thanks -->
-            <a class="button" href="STRIPE_LINK_PLACEHOLDER" data-stripe="leadgen-1-pilot">Start the pilot — $99</a>
+            <a class="button" href="STRIPE_LINK_PLACEHOLDER" data-stripe="leadgen-1-pilot">Start the pilot for $99</a>
           </div>
         </div>
       </div>
@@ -282,13 +285,13 @@ fbq('track', 'PageView');
     <div class="wrap cols">
       <div>
         <h2 id="wont-title">What you won't get</h2>
-        <ul class="plain">
+        <ul class="plain neg">
           <li>No retainer</li>
           <li>No setup fee without a 48-hour deliverable</li>
           <li>No offshore reps who can't say what you sell</li>
           <li>No shared or resold lists</li>
           <li>No automated blasts, no cold calls</li>
-          <li>We don't close — you take the meeting</li>
+          <li>We don't close. You take the meeting.</li>
         </ul>
       </div>
       <div class="who">
@@ -305,10 +308,10 @@ fbq('track', 'PageView');
           </div>
           <div>
             <h3>Not for</h3>
-            <ul class="plain">
-              <li class="not">Pre-revenue companies</li>
-              <li class="not">Deals under $20,000</li>
-              <li class="not">10 to 60 meetings a month</li>
+            <ul class="plain neg">
+              <li>Pre-revenue companies</li>
+              <li>Deals under $20,000</li>
+              <li>10 to 60 meetings a month</li>
             </ul>
           </div>
         </div>
@@ -321,7 +324,7 @@ fbq('track', 'PageView');
     <div class="wrap">
       <div class="guarantee">
         <h2 id="g-title">The guarantee</h2>
-        <p>Don't get 3 meetings in 30 days and your $99 comes back. A meeting that misses the written bar is credited within 72 hours. A no-show gets one reschedule and isn't billed. And if you change your mind in the first 14 days, email me and I'll refund the $99, no questions.</p>
+        <p>Don't get 3 meetings in 30 days and your $99 comes back. A meeting that isn't a real fit is credited within 72 hours. A no-show gets one reschedule and isn't billed. And if you change your mind in the first 14 days, email me and I'll refund the $99, no questions.</p>
       </div>
     </div>
   </section>
@@ -331,11 +334,11 @@ fbq('track', 'PageView');
     <div class="wrap">
       <div class="section-head"><h2 id="faq-title">Questions</h2></div>
       <div class="faq">
-        <details><summary>What counts as a meeting I pay for?</summary><p>20 minutes or more, on your calendar, with the named decision maker you agreed was a fit. If they don't show, I reschedule once and you're not billed. If the person doesn't match the bar we both signed off on, it's credited.</p></details>
-        <details><summary>Who takes the call?</summary><p>You do. I book qualified meetings and hand you a short brief on each one. I don't pitch or close your product — you know it better than anyone.</p></details>
+        <details><summary>What counts as a meeting I pay for?</summary><p>20 minutes or more, on your calendar, with the named decision maker we agreed counts. If they don't show, I reschedule once and you're not billed. If the person doesn't match what we wrote down together, it's credited.</p></details>
+        <details><summary>Who takes the call?</summary><p>You do. I book qualified meetings and hand you a short brief on each one. I don't pitch or close your product. You know it better than anyone.</p></details>
         <details><summary>Why you, and not an agency?</summary><p>I'm a cloud engineer. I've run the stacks your buyers run, so when a prospect asks what your tool does to their deploy pipeline, the person reaching out can actually answer. That's the thing their customers say the big agencies get wrong.</p></details>
         <details><summary>How fast do I see something?</summary><p>3 prospects free within 24 hours of asking. If you start the pilot, your qualification bar and 10 vetted prospects land within 48 hours. Meetings follow from there.</p></details>
-        <details><summary>What if the meetings aren't good?</summary><p>You only pay for meetings that meet the bar we wrote together. One that misses it is credited. And the whole first month is backed by the 3-in-30 guarantee.</p></details>
+        <details><summary>What if the meetings aren't good?</summary><p>You only pay for meetings that match what we wrote down together. One that doesn't is credited. And the whole first month is backed by the 3-in-30 guarantee.</p></details>
       </div>
     </div>
   </section>
@@ -345,7 +348,7 @@ fbq('track', 'PageView');
     <div class="wrap">
       <h2 id="close-title">See 3 prospects first. Then decide.</h2>
       <div class="cta-row">
-        <a class="button" href="#start">Start the pilot — $99</a>
+        <a class="button" href="#start">Start the pilot for $99</a>
         <a class="button-secondary" href="#sample">See 3 prospects first, free</a>
       </div>
     </div>
