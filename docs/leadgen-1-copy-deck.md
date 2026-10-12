@@ -11,23 +11,25 @@ Page plan header. Persona: founder or head of growth at a dev-tool or cloud-infr
 ### Hero
 
 Eyebrow (pre-headline qualifier)
-> For dev-tool and cloud-infra vendors with $20,000+ deals and no sales hire
+> For SaaS vendors with $20,000+ deals
 
 H1
-> Booked meetings with engineering buyers. You pay when the meeting happens.
+> Books meetings with tech buyers. You only pay when the meeting happens.
 
 Subhead
-> Qualified meetings with the engineers who buy dev tools and cloud infra, found and booked by a cloud engineer who can answer their questions. $600 for a meeting that happens. $0 for one that doesn't.
+> A cloud engineer finds, qualifies, and books the decision makers who'd buy your product. $600 when a meeting happens. $0 when it doesn't.
 
 Primary button (call to value)
 > Start my pilot for $99
 Click trigger under it
-> Next: Stripe checkout, then a 2-minute form. Your qualification bar and 10 vetted prospects land within 48 hours. 14-day refund, no questions.
+> Your bar and 10 prospects in 48 hours. Money back in 14 days.
 
 Secondary button
 > Show me 3 prospects first
 Click trigger
-> Free. In your inbox within 24 hours. No card.
+> Free. In your inbox in 24 hours.
+
+Accuracy note (Sam, 2026-10-12): the people booked are "prospects" / "decision makers who'd buy your product," never claimed to be engineers of that company and never promised to be on the call. "A cloud engineer" refers to Sam doing the outreach, the wedge. The qualified-meeting promise is a decision maker who matches the written bar.
 
 Video (right column): the method video, draft cut for now.
 Caption under video
@@ -44,7 +46,7 @@ Three columns:
    > A senior cloud engineer writes to your prospects. When one asks what your tool does to their deploy pipeline, the person writing back can answer.
 
 2. Eyebrow: What you can check
-   > 3 engineers who fit your buyer, each with a note on who they are, what they run and why now. In your inbox within 24 hours. Free.
+   > 3 prospects who fit your buyer, each with a note on who they are, what they run and why now. In your inbox within 24 hours. Free.
 
 3. Eyebrow: What you risk
    > $600 per meeting that happens. A no-show is rescheduled once and never billed. 3 meetings in 30 days or your $99 comes back.
@@ -55,11 +57,11 @@ Crosshead
 > What founders say after three months with an appointment-setting agency
 
 > "We paid $20K and they didn't generate a single lead."
-> "The reps knew sales but had zero clue about the product."
-> "Prospects could tell right away it wasn't the founder talking."
+> "Couldn't pronounce the company, didn't know what product we were selling."
+> "The best part was before we signed the contract."
 
 Line under the quotes
-> Public one-star reviews of the big agencies. I read 49. 22 said the reps didn't know the product.
+> From G2 and Trustpilot, on the big appointment-setting agencies.
 
 ### Value prop crosshead + The How (four named blocks)
 
@@ -130,14 +132,14 @@ Confidence line
 ### The Close: two cards (decoy)
 
 Section crosshead
-> Start with the 3 free prospects, or start the pilot today
+> Start with 3 free prospects or start the pilot today
 
 Left card (free sample)
 - Tag: Free sample
 - Title: 3 prospects who fit your buyer
 - Line: Within 24 hours. No card.
 - List:
-  - 3 engineers at companies that match your buyer
+  - 3 prospects at companies that match your buyer
   - A note on each: who they are, what they run, why now
   - Judge the fit before anything else
 - Form fields: Your website / Who you sell to / Work email
@@ -160,7 +162,7 @@ Right card (pilot, primary)
   - 3 meetings in 30 days or your $99 back
   - 14-day refund on the $99, no questions
 - Button: Start my pilot for $99
-- Trigger: Next: Stripe checkout, then a 2-minute form. 14-day refund, no questions.
+- Trigger: Your bar and 10 prospects in 48 hours. Money back in 14 days.
 
 ### What you won't get / Who it's for
 
@@ -175,7 +177,7 @@ What you won't get (red markers)
 You're ready for the pilot if (green markers; Perfect-For-You-If, compact)
 - You sell a dev tool or cloud infra product
 - Your deals are $20,000 or more
-- Your buyer is an engineer or an engineering lead
+- Your buyer is a technical decision maker
 - You've closed your first customers yourself
 - You're already spending your evenings on outreach
 - You want to pay for meetings, nothing else
@@ -206,7 +208,7 @@ Crosshead
 4. **Why not an agency, or a hire?**
    An agency charges a retainer before a meeting exists and puts a rep on your account who has never used your product. A hire costs a salary and 3 months of ramp. The pilot costs $99 to find out, and you pay the rest only when a meeting happens.
 5. **Why does it matter that an engineer does the outreach?**
-   Because your buyers are engineers. When one asks what your tool does to their deploy pipeline, a rep says "great question, let me loop in the team." An engineer answers it. That answer is the difference between a reply and silence.
+   Because the people who evaluate a dev tool are usually technical. When one asks what your tool does to their deploy pipeline, a rep says "great question, let me loop in the team." An engineer answers it. That answer is the difference between a reply and silence.
 6. **What if it doesn't work for my product?**
    Then you'll know by day 2, when the first 10 prospects land. And if 3 meetings don't happen in 30 days, the $99 comes back.
 7. **What exactly do I pay?**
@@ -277,9 +279,9 @@ Not a dead end (below the form)
 ## 3. Meta ads (two value-prop variants, same body and creative; test one variable at a time)
 
 Variant A (pay per meeting)
-- Headline: Meetings with engineering buyers. Pay only when they happen.
+- Headline: Meetings with tech buyers. Pay only when they happen.
 - Primary text:
-  > 3 meetings a month with the engineers who buy dev tools.
+  > 3 meetings a month with the decision makers who buy dev tools.
   >
   > Found, checked and booked by a cloud engineer. $600 when the meeting happens. $0 when it doesn't.
   >
@@ -303,7 +305,7 @@ Variant B (an engineer, not a rep)
   > See 3 prospects free first. Pilot is $99, credited to your first meeting.
 - Description: For $20,000+ deals. 3 meetings in 30 days or your $99 back.
 
-Creative: a screen recording of a real prospect note being written (peer-post look), captions on. Hook in the first 3 seconds names the group: "If you sell to engineers..."
+Creative: a screen recording of a real prospect note being written (peer-post look), captions on. Hook in the first 3 seconds names the group: "If you sell dev tools or cloud infra..."
 
 ---
 
@@ -312,7 +314,7 @@ Creative: a screen recording of a real prospect note being written (peer-post lo
 ### 4a. The sample delivery email (day zero: they asked for 3 prospects)
 
 From: Sam at Halstead
-Subject: 3 engineers who fit [Company]'s buyer
+Subject: 3 prospects who fit [Company]'s buyer
 Plain text. No links until they reply, except the 3 names.
 
 > Here are the 3 you asked for.
@@ -349,7 +351,7 @@ Subject: One of the three
 
 > We connected on [topic]. I book qualified meetings for dev-tool and cloud-infra founders, written by an engineer, paid only when the meeting happens.
 >
-> I spent 20 minutes on [Company]'s buyer and found 3 engineers who'd be worth 20 minutes of your time this month:
+> I spent 20 minutes on [Company]'s buyer and found 3 prospects who'd be worth 20 minutes of your time this month:
 > 1. [Name], [title] at [Company], [why now]
 > 2. [Name], [title] at [Company], [why now]
 > 3. [Name], [title] at [Company], [why now]
@@ -362,7 +364,7 @@ Follow-up (one, day 5 to 7)
 > Did any of the three look right? If one was close, tell me what was off and I'll send 2 more in that shape.
 
 ### 5c. Profile About, first line
-> Qualified meetings with engineering buyers, booked by a cloud engineer, paid for only when they happen. For dev-tool and cloud-infra vendors with $20,000+ deals.
+> Qualified meetings with tech buyers, booked by a cloud engineer, paid for only when they happen. For SaaS vendors with $20,000+ deals.
 (Then one testimonial that proves that exact claim, once we have one. Until then, a link to the method video.)
 
 ---
@@ -383,7 +385,7 @@ Opens on the buyer's outcome and the demonstration. Credibility right after, fro
 >
 > You pay six hundred dollars when a meeting happens. If they no-show, I reschedule once and you're not billed. If it isn't a fit, you get credited. And if you don't get three meetings in thirty days, your ninety-nine dollars comes back.
 >
-> So the easiest way to start. Send me your site. I'll send you three engineers who fit your buyer, with a note on each, in a day, for free. If you like what you see, the pilot is ninety-nine dollars, and it comes off your first meeting.
+> So the easiest way to start. Send me your site. I'll send you three prospects who fit your buyer, with a note on each, in a day, for free. If you like what you see, the pilot is ninety-nine dollars, and it comes off your first meeting.
 >
 > This isn't for pre-revenue companies, or deals under twenty thousand. If that's where you are, send your site anyway. You'll still get the three.
 
