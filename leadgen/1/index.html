@@ -75,6 +75,11 @@
   .proof-quotes { list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .proof-quotes li { border-top: 2px solid var(--rule); padding-top: 18px; color: var(--ink); font-size: 17px; line-height: 1.4; }
   .proof-src { margin-top: 28px; font-size: 13.5px; color: var(--muted); max-width: 70ch; }
+  /* Proof points: our competence, shown. Amber top rule marks them as strengths. */
+  .proof-points { list-style: none; margin: 36px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .proof-points li { border-top: 2px solid var(--amber); padding-top: 18px; }
+  .proof-points .pp-head { display: block; font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.01em; }
+  .proof-points p { font-size: 15.5px; line-height: 1.5; color: var(--body); }
 
   /* Steps */
   .steps { list-style: none; margin: 0; padding: 0; counter-reset: s; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
@@ -140,7 +145,7 @@
 
   @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-    .proof-quotes { grid-template-columns: 1fr; }
+    .proof-quotes, .proof-points { grid-template-columns: 1fr; }
     .steps { grid-template-columns: 1fr 1fr; gap: 28px 24px; }
     .offers { grid-template-columns: 1fr; }
     .cols, .who-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -198,14 +203,22 @@ fbq('track', 'PageView');
   <!-- PROOF STRIP: the finding, in buyers' own words. Other agencies' customers, labeled honestly. -->
   <section class="band band--raised" aria-labelledby="proof-title">
     <div class="wrap">
-      <p class="eyebrow">Does this sound familiar?</p>
-      <p id="proof-title" class="proof-intro">If you've hired an appointment setting agency before, some of this probably rings true.</p>
-      <ul class="proof-quotes">
-        <li>"We paid $20K and they didn't generate a single lead."</li>
-        <li>"The reps knew sales but had zero clue about the product."</li>
-        <li>"The best part was before we signed the contract."</li>
+      <p class="eyebrow">The proof is the work</p>
+      <h2 id="proof-title">You don't have to take my word for it.</h2>
+      <ul class="proof-points">
+        <li>
+          <span class="pp-head">I'm the engineer your buyers are</span>
+          <p>I've spent my career running production cloud infrastructure. When a prospect asks what your tool does to their deploy pipeline, I can answer it. That is the one thing their own reviews say the big agencies get wrong.</p>
+        </li>
+        <li>
+          <span class="pp-head">See the work before you pay a cent</span>
+          <p>Give me your site and I'll send you 3 real engineers who fit your buyer, each with a note on who they are, what they run, and why now. In 24 hours. Free.</p>
+        </li>
+        <li>
+          <span class="pp-head">The risk sits with me, not you</span>
+          <p>No retainer. You pay $600 only when a meeting actually happens. A no-show isn't billed. 3 meetings in 30 days, or your $99 comes back.</p>
+        </li>
       </ul>
-      <p class="proof-src">Real one-star reviews of CIENCE, Belkins, Martal and Callbox. I read 49 of them, and 22 said the same thing: the reps didn't know the product. This works the opposite way. An engineer who knows your product, prospects you can check before you pay, and a bill only when a meeting happens.</p>
     </div>
   </section>
 
