@@ -359,8 +359,10 @@ Opens on the buyer's outcome and the demonstration. Credibility right after, fro
 > So the easiest way to start. Send me your site. I'll send you three prospects who fit your buyer, with a note on each, in a day, for free. If you like what you see, the pilot is ninety-nine dollars, and it comes off your first meeting.
 >
 > This isn't for pre-revenue companies, or deals under twenty thousand. If that's where you are, send your site anyway. You'll still get the three.
+>
+> Either way, I look forward to putting prospects on your calendar.
 
-Screens: 1 calendar with a 20-minute slot / 2 the written bar / 3 a prospect note / 4 a short message thread / 5 the calendar + brief / 6 the ledger / 7 the two cards / 8 the not-for line.
+Screens: 1 calendar with a 20-minute slot / 2 the written bar / 3 a prospect note / 4 a short message thread / 5 the calendar + brief / 6 the ledger / 7 the two cards / 8 the not-for line / 9 the sign-off.
 
 ---
 
