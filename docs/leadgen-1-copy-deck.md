@@ -61,7 +61,7 @@ Crosshead
 > "The best part was before we signed the contract."
 
 Line under the quotes
-> From G2 and Trustpilot, on the big appointment-setting agencies.
+> — G2, Trustpilot
 
 ### The How (four connected rectangles, a left-to-right flow; Sam, 2026-10-12)
 
@@ -70,10 +70,10 @@ Layout: four rectangles in a row, numbered 1 to 4, with an arrow between each, s
 Section crosshead
 > How a stranger becomes 20 minutes on your calendar
 
-1. **Write the bar** — Title, team size, stack, and a sign they're buying now. You sign off in 48 hours.
-2. **Find and read** — Every prospect read before anyone writes. 10 notes in 48 hours, all yours to check.
-3. **Reach out** — One engineer to another. A few questions back and forth tell us if they fit.
-4. **Book it** — 20 minutes on your calendar, with a brief. $600 when it happens.
+1. **Write the bar** â Title, team size, stack, and a sign they're buying now. You sign off in 48 hours.
+2. **Find and read** â Every prospect read before anyone writes. 10 notes in 48 hours, all yours to check.
+3. **Reach out** â One engineer to another. A few questions back and forth tell us if they fit.
+4. **Book it** â 20 minutes on your calendar, with a brief. $600 when it happens.
 
 ### The Switch (what they're switching from; honest comparison)
 
