@@ -17,7 +17,7 @@ H1
 > Books meetings with tech buyers. You only pay when the meeting happens.
 
 Subhead
-> A cloud engineer finds, qualifies, and books the decision makers who'd buy your product. $600 when a meeting happens. $0 when it doesn't.
+> A cloud engineer finds, qualifies, and books the prospects who'd buy your product. $600 when a meeting happens. $0 when it doesn't.
 
 Primary button (call to value)
 > Start my pilot for $99
@@ -29,7 +29,7 @@ Secondary button
 Click trigger
 > Free. In your inbox in 24 hours.
 
-Accuracy note (Sam, 2026-10-12): the people booked are "prospects" / "decision makers who'd buy your product," never claimed to be engineers of that company and never promised to be on the call. "A cloud engineer" refers to Sam doing the outreach, the wedge. The qualified-meeting promise is a decision maker who matches the written bar.
+Accuracy note (Sam, 2026-10-12): the people booked are "prospects who'd buy your product," not guaranteed to be decision makers, never claimed to be engineers of that company and never promised to be on the call. "A cloud engineer" refers to Sam doing the outreach, the wedge. The qualified-meeting promise is a decision maker who matches the written bar.
 
 Video (right column): the method video, draft cut for now.
 Caption under video
@@ -63,46 +63,17 @@ Crosshead
 Line under the quotes
 > From G2 and Trustpilot, on the big appointment-setting agencies.
 
-### Value prop crosshead + The How (four named blocks)
+### The How (four connected rectangles, a left-to-right flow; Sam, 2026-10-12)
+
+Layout: four rectangles in a row, numbered 1 to 4, with an arrow between each, so the order reads at a glance. Stacks vertically with down-arrows on mobile. Condensed to one line each (Sam: the old four-card version was cluttered). The full step detail lives in the pilot card's mega list.
 
 Section crosshead
 > How a stranger becomes 20 minutes on your calendar
 
-Block 1
-- Eyebrow: The qualification bar
-- Crosshead: Only names that count
-- Inside:
-  - Title, team size, what they run.
-  - One sign they're in the market now: a job post, a migration, a new funding round.
-  - Written with you, in 48 hours. You sign off on it.
-- So that: you never sit through a meeting with the wrong person.
-
-Block 2
-- Eyebrow: Prospect notes
-- Crosshead: Every prospect read before anyone writes to them
-- Inside:
-  - Who they are, what they're running, why now.
-  - 10 notes in your first 48 hours. You can check every one.
-  - A name that misses the bar is out before it costs you anything.
-- So that: you know who's coming before they show up.
-
-Block 3
-- Eyebrow: Engineer-to-engineer outreach
-- Crosshead: Messages a technical buyer answers
-- Inside:
-  - One engineer to another. No pitch, no sequence, no template.
-  - Written by someone who has run the stacks your buyers run.
-  - 2 or 3 questions back and forth tell us if they're a fit.
-- So that: the first reply is a conversation, not an unsubscribe.
-
-Block 4
-- Eyebrow: The booked meeting
-- Crosshead: 20 minutes on your calendar, with a brief
-- Inside:
-  - Who they are, what they run, why now, what they asked.
-  - You take the meeting. You close it.
-  - $600 when it happens. Credited if it isn't a fit.
-- So that: every meeting you take is one you'd have picked yourself.
+1. **Write the bar** — Title, team size, stack, and a sign they're buying now. You sign off in 48 hours.
+2. **Find and read** — Every prospect read before anyone writes. 10 notes in 48 hours, all yours to check.
+3. **Reach out** — One engineer to another. A few questions back and forth tell us if they fit.
+4. **Book it** — 20 minutes on your calendar, with a brief. $600 when it happens.
 
 ### The Switch (what they're switching from; honest comparison)
 

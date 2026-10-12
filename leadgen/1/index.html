@@ -79,14 +79,13 @@
   .quotes li { border-top: 2px solid var(--rule); padding-top: 16px; color: var(--ink); font-size: 17px; line-height: 1.4; }
   .quotes-src { margin-top: 24px; font-size: 14px; color: var(--muted); max-width: 70ch; }
 
-  /* The How */
-  .how { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-  .how-block { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: clamp(22px, 3vw, 30px); }
-  .how-block h3 { margin-bottom: 14px; font-size: 21px; }
-  .how-block ul { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 9px; }
-  .how-block li { position: relative; padding-left: 22px; font-size: 16px; line-height: 1.45; }
-  .how-block li::before { content: ""; position: absolute; left: 0; top: 9px; width: 9px; height: 9px; border-radius: 2px; background: var(--amber); }
-  .so-that { font-size: 15px; color: var(--muted); border-top: 1px solid var(--rule-soft); padding-top: 12px; }
+  /* The How: a four-step flow of connected rectangles */
+  .flow { display: flex; align-items: stretch; gap: 8px; }
+  .flow-step { flex: 1 1 0; min-width: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: clamp(18px, 1.8vw, 24px); display: flex; flex-direction: column; }
+  .flow-num { width: 30px; height: 30px; border-radius: 50%; background: var(--amber); color: var(--on-amber); font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+  .flow-step h3 { font-size: 18px; margin-bottom: 8px; letter-spacing: -0.01em; }
+  .flow-step p { font-size: 14.5px; line-height: 1.45; color: var(--body); }
+  .flow-arrow { flex: 0 0 auto; align-self: center; color: var(--amber); font-size: 24px; line-height: 1; padding: 0 2px; user-select: none; }
 
   /* The Switch */
   .switch-lede { margin-top: 16px; max-width: 64ch; color: var(--body); font-size: 17px; }
@@ -154,7 +153,8 @@
   @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; gap: 40px; }
     .proof-points, .quotes { grid-template-columns: 1fr; }
-    .how { grid-template-columns: 1fr; }
+    .flow { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); padding: 4px 0; }
     .offers { grid-template-columns: 1fr; }
     .cols3 { grid-template-columns: 1fr; gap: 32px; }
   }
@@ -189,7 +189,7 @@ fbq('track', 'PageView');
       <div>
         <p class="eyebrow">For SaaS vendors with $20,000+ deals</p>
         <h1 id="hero-title">Books meetings with tech buyers. You only pay when the meeting happens.</h1>
-        <p class="lede">A cloud engineer finds, qualifies, and books the decision makers who'd buy your product. $600 when a meeting happens. $0 when it doesn't.</p>
+        <p class="lede">A cloud engineer finds, qualifies, and books the prospects who'd buy your product. $600 when a meeting happens. $0 when it doesn't.</p>
         <div class="cta-pair">
           <div>
             <a class="button" href="#start">Start my pilot for $99</a>
@@ -248,46 +248,29 @@ fbq('track', 'PageView');
   <section class="band band--raised" aria-labelledby="how-title">
     <div class="wrap">
       <div class="section-head"><h2 id="how-title">How a stranger becomes 20 minutes on your calendar</h2></div>
-      <div class="how">
-        <div class="how-block">
-          <span class="eyebrow-sm">The qualification bar</span>
-          <h3>Only names that count</h3>
-          <ul>
-            <li>Title, team size, what they run.</li>
-            <li>One sign they're in the market now: a job post, a migration, a new funding round.</li>
-            <li>Written with you, in 48 hours. You sign off on it.</li>
-          </ul>
-          <p class="so-that">So you never sit through a meeting with the wrong person.</p>
+      <div class="flow">
+        <div class="flow-step">
+          <span class="flow-num">1</span>
+          <h3>Write the bar</h3>
+          <p>Title, team size, stack, and a sign they're buying now. You sign off in 48 hours.</p>
         </div>
-        <div class="how-block">
-          <span class="eyebrow-sm">Prospect notes</span>
-          <h3>Every prospect read before anyone writes to them</h3>
-          <ul>
-            <li>Who they are, what they're running, why now.</li>
-            <li>10 notes in your first 48 hours. You can check every one.</li>
-            <li>A name that misses the bar is out before it costs you anything.</li>
-          </ul>
-          <p class="so-that">So you know who's coming before they show up.</p>
+        <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+        <div class="flow-step">
+          <span class="flow-num">2</span>
+          <h3>Find and read</h3>
+          <p>Every prospect read before anyone writes. 10 notes in 48 hours, all yours to check.</p>
         </div>
-        <div class="how-block">
-          <span class="eyebrow-sm">Engineer-to-engineer outreach</span>
-          <h3>Messages a technical buyer answers</h3>
-          <ul>
-            <li>One engineer to another. No pitch, no sequence, no template.</li>
-            <li>Written by someone who has run the stacks your buyers run.</li>
-            <li>2 or 3 questions back and forth tell us if they're a fit.</li>
-          </ul>
-          <p class="so-that">So the first reply is a conversation.</p>
+        <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+        <div class="flow-step">
+          <span class="flow-num">3</span>
+          <h3>Reach out</h3>
+          <p>One engineer to another. A few questions back and forth tell us if they fit.</p>
         </div>
-        <div class="how-block">
-          <span class="eyebrow-sm">The booked meeting</span>
-          <h3>20 minutes on your calendar, with a brief</h3>
-          <ul>
-            <li>Who they are, what they run, why now, what they asked.</li>
-            <li>You take the meeting. You close it.</li>
-            <li>$600 when it happens. Credited if it isn't a fit.</li>
-          </ul>
-          <p class="so-that">So every meeting you take is one you'd have picked yourself.</p>
+        <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+        <div class="flow-step">
+          <span class="flow-num">4</span>
+          <h3>Book it</h3>
+          <p>20 minutes on your calendar, with a brief. $600 when it happens.</p>
         </div>
       </div>
     </div>
