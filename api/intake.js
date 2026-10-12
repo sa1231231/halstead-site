@@ -10,7 +10,7 @@
 //   GOOGLE_SA_KEY        service-account private key (PEM; literal \n are handled)
 //   TRACKER_SHEET_ID     spreadsheet id of "Idea Test Tracker"
 // Optional:
-//   INTAKE_RANGE         default "leadgen-1 intake!A:H"
+//   INTAKE_RANGE         default "leadgen-1 intake!A:I"
 //   RESEND_API_KEY       to email a notification
 //   NOTIFY_EMAIL         where to send it (default sam@halsteadsystems.com)
 //
@@ -79,7 +79,7 @@ async function appendRow(row) {
   if (!sheetId) return false;
   const token = await googleAccessToken();
   if (!token) return false;
-  const range = encodeURIComponent(process.env.INTAKE_RANGE || "leadgen-1 intake!A:H");
+  const range = encodeURIComponent(process.env.INTAKE_RANGE || "leadgen-1 intake!A:I");
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}:append?valueInputOption=USER_ENTERED`;
   const res = await fetch(url, {
     method: "POST",
@@ -123,6 +123,7 @@ export default async function handler(req, res) {
     triggers: (data.triggers || "").slice(0, 2000),
     calendar: (data.calendar || "").slice(0, 300),
     source: (req.headers["referer"] || "").slice(0, 300),
+    why_now: (data.why_now || "").slice(0, 2000),
   };
 
   // Always log, so a submission is recoverable from function logs even if a
@@ -132,7 +133,7 @@ export default async function handler(req, res) {
   const results = { logged: true, sheet: false, email: false };
   try {
     results.sheet = await appendRow([
-      sub.ts, sub.kind, sub.email, sub.website, sub.icp, sub.triggers, sub.calendar, sub.source,
+      sub.ts, sub.kind, sub.email, sub.website, sub.icp, sub.triggers, sub.calendar, sub.source, sub.why_now,
     ]);
   } catch (e) {
     console.error("sheet error", e.message);
