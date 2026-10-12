@@ -346,13 +346,13 @@ Opens on the buyer's outcome and the demonstration. Credibility right after, fro
 
 > Here's how a stranger becomes 20 minutes on your calendar, and why you only pay when it happens.
 >
-> First, we write down who counts. Title, team size, what they run, and one sign they're in the market right now. A job post. A migration. If a name doesn't hit that bar, it's out before it costs you anything.
+> First, I draft a bar with you. Title, team size, stack, and one sign they're buying right now. A job post. A migration. You sign off. If a name doesn't hit that bar, it's out before it costs you anything.
 >
-> Then every prospect gets read before anyone writes to them. Who they are, what they're running, why now. You get the first ten in forty-eight hours, and you can check every one.
+> Then I find the prospects who fit, and I read what each one ships. Who they are, what they're running, why now. You get the first ten in forty-eight hours, and you can check every one.
 >
-> Then I write to them. One engineer to another. No pitch, no sequence. I've run the stacks these people run, so when somebody asks what your tool does to their deploy pipeline, they get an answer, not "let me loop in the team." A couple of questions back and forth tells us if they're a fit.
+> Then I write to each one myself. No pitch, no sequence. I've run the stacks these people run, so when somebody asks what your tool does to their deploy pipeline, they get an answer, not "let me loop in the team." A couple of questions back and forth tell us if they're a fit.
 >
-> When they are, there's twenty minutes on your calendar and a short brief in your inbox. Who they are, what they run, what they asked. You take the meeting. You close it.
+> When they are, I put twenty minutes on your calendar and send you a short brief. Who they are, what they run, what they asked. You take the meeting. You close it.
 >
 > You pay six hundred dollars when a meeting happens. If they no-show, I reschedule once and you're not billed. If it isn't a fit, you get credited. And if you don't get three meetings in thirty days, your ninety-nine dollars comes back.
 >
