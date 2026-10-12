@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Booked meetings with engineers | Halstead Systems</title>
+<meta name="description" content="Qualified meetings with engineering buyers, booked by a cloud engineer. You pay when the meeting happens. See 3 prospects first, free.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#12161C">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2312161C'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia,serif' font-size='40' fill='%23E3A93E'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #12161C; --raised: #161B22; --surface: #181D25;
+    --rule: #2A313B; --rule-soft: #212831;
+    --ink: #ECEEF0; --body: #BCC3CC; --muted: #8A929D;
+    --amber: #E3A93E; --amber-hover: #EDB85A; --green: #5FC98B; --on-amber: #1A1307;
+    --sans: "Geist", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --wrap: 1120px; --gutter: clamp(20px, 5vw, 48px); --section: clamp(64px, 8vw, 104px);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--body); font-family: var(--sans);
+    font-size: 18px; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+  p { margin: 0; } a { color: inherit; } img, video { max-width: 100%; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: var(--gutter); }
+
+  h1, h2 { font-family: var(--sans); font-weight: 600; color: var(--ink); margin: 0; letter-spacing: -0.028em; }
+  h1 { font-size: clamp(34px, 4.2vw, 52px); line-height: 1.06; letter-spacing: -0.036em; max-width: 16ch; text-wrap: balance; }
+  h2 { font-size: clamp(26px, 3vw, 36px); line-height: 1.12; max-width: 24ch; }
+  h3 { font-size: 19px; font-weight: 600; line-height: 1.3; color: var(--ink); margin: 0; }
+  .lede { font-size: 19px; line-height: 1.55; max-width: 52ch; color: var(--body); }
+  .small { font-size: 15px; color: var(--muted); }
+  .eyebrow { font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--amber); font-weight: 600; margin-bottom: 18px; }
+
+  .button { display: inline-block; background: var(--amber); color: var(--on-amber); font-weight: 600;
+    font-size: 16px; line-height: 1; text-decoration: none; padding: 17px 24px; border: 1px solid var(--amber);
+    border-radius: 6px; cursor: pointer; transition: background-color .15s ease, border-color .15s ease; }
+  .button:hover { background: var(--amber-hover); border-color: var(--amber-hover); }
+  .button-secondary { display: inline-block; background: transparent; color: var(--ink); font-weight: 500;
+    font-size: 15px; line-height: 1; text-decoration: none; padding: 16px 22px; border: 1px solid var(--rule);
+    border-radius: 6px; cursor: pointer; transition: border-color .15s ease, color .15s ease; }
+  .button-secondary:hover { border-color: var(--amber); color: var(--amber); }
+  :focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
+
+  .site-header { border-bottom: 1px solid var(--rule-soft); }
+  .header-inner { display: flex; align-items: center; padding-block: 16px; }
+  .wordmark { font-family: var(--sans); font-weight: 600; font-size: 21px; letter-spacing: -0.028em; color: var(--ink); text-decoration: none; }
+
+  .band { padding-block: var(--section); }
+  .band--raised { background: var(--raised); }
+  .band--line { border-top: 1px solid var(--rule); }
+  .section-head { margin-bottom: 40px; }
+  .section-lede { margin-top: 16px; max-width: 60ch; color: var(--muted); font-size: 16px; }
+
+  /* Hero */
+  .hero { padding-top: clamp(40px, 6vw, 72px); padding-bottom: var(--section); }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(36px, 5vw, 72px); align-items: center; }
+  .hero-grid > * { min-width: 0; }
+  .hero h1 { margin-bottom: 22px; }
+  .hero .lede { margin-bottom: 30px; }
+  .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+  .credit-line { margin-top: 22px; font-size: 14px; color: var(--muted); }
+  .hero-video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000;
+    border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+  .hero-video video { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .draft-flag { margin-top: 10px; font-size: 12.5px; color: var(--muted); font-style: italic; }
+
+  /* Proof strip */
+  .proof-intro { font-size: clamp(20px, 2.2vw, 26px); color: var(--ink); font-weight: 500; max-width: 24ch; line-height: 1.25; }
+  .proof-quotes { list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .proof-quotes li { border-top: 2px solid var(--rule); padding-top: 18px; color: var(--ink); font-size: 17px; line-height: 1.4; }
+  .proof-src { margin-top: 28px; font-size: 13.5px; color: var(--muted); max-width: 70ch; }
+
+  /* Steps */
+  .steps { list-style: none; margin: 0; padding: 0; counter-reset: s; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  .steps li { counter-increment: s; }
+  .steps .n { display: block; font-size: 15px; font-weight: 600; color: var(--amber); margin-bottom: 10px; }
+  .steps .n::before { content: counter(s) ". "; }
+  .steps p { font-size: 16px; line-height: 1.5; }
+
+  /* Two cards */
+  .offers { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+  .card { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; }
+  .card--primary { border-color: var(--amber); }
+  .card .tag { font-size: 13px; letter-spacing: 0.03em; text-transform: uppercase; font-weight: 600; color: var(--muted); margin-bottom: 14px; }
+  .card--primary .tag { color: var(--amber); }
+  .card h3 { font-size: 22px; margin-bottom: 8px; }
+  .card .price { font-size: 15px; color: var(--muted); margin-bottom: 20px; }
+  .card ul { list-style: none; margin: 0 0 28px; padding: 0; display: grid; gap: 12px; }
+  .card li { position: relative; padding-left: 26px; font-size: 16px; line-height: 1.45; color: var(--body); }
+  .card li::before { content: ""; position: absolute; left: 0; top: 8px; width: 10px; height: 10px; border-radius: 2px; background: var(--amber); }
+  .card .cta { margin-top: auto; }
+  .card .button, .card .button-secondary { width: 100%; text-align: center; box-sizing: border-box; }
+
+  /* Form */
+  .intake { margin-top: 18px; display: grid; gap: 12px; }
+  .intake label { font-size: 14px; color: var(--muted); display: grid; gap: 6px; }
+  .intake input, .intake textarea { width: 100%; background: var(--bg); border: 1px solid var(--rule); border-radius: 6px;
+    color: var(--ink); font-family: var(--sans); font-size: 15px; padding: 11px 12px; }
+  .intake input:focus, .intake textarea:focus { outline: none; border-color: var(--amber); }
+  .form-note { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+
+  /* Lists: won't get / who */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 64px); }
+  .plain { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 12px; }
+  .plain li { position: relative; padding-left: 24px; font-size: 16px; line-height: 1.45; }
+  .plain li::before { content: ""; position: absolute; left: 0; top: 9px; width: 12px; height: 2px; background: var(--muted); }
+  .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 48px); margin-top: 8px; }
+  .who h3 { margin-bottom: 14px; }
+  .who .for::before { background: var(--green); width: 10px; height: 10px; border-radius: 2px; top: 7px; }
+  .who .not::before { background: var(--muted); }
+
+  .guarantee { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: clamp(24px, 3vw, 36px); max-width: 760px; }
+  .guarantee h2 { margin-bottom: 16px; }
+  .guarantee p { color: var(--body); }
+
+  .faq { border-top: 1px solid var(--rule); max-width: 820px; }
+  .faq details { border-bottom: 1px solid var(--rule); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+    gap: 24px; padding-block: 22px; color: var(--ink); font-weight: 500; font-size: 18px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: ""; flex-shrink: 0; width: 12px; height: 12px;
+    background: linear-gradient(var(--amber), var(--amber)) center / 12px 2px no-repeat, linear-gradient(var(--amber), var(--amber)) center / 2px 12px no-repeat;
+    transition: transform .2s ease; }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq details p { padding-bottom: 24px; max-width: 64ch; font-size: 17px; }
+
+  .closing h2 { margin-bottom: 26px; }
+  .site-footer { border-top: 1px solid var(--rule); padding-block: 28px; font-size: 14px; color: var(--muted);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-legal { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-legal a { color: var(--muted); text-decoration: none; transition: color .15s ease; }
+  .footer-legal a:hover { color: var(--amber); }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .proof-quotes { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; gap: 28px 24px; }
+    .offers { grid-template-columns: 1fr; }
+    .cols, .who-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (max-width: 560px) {
+    .steps { grid-template-columns: 1fr; }
+    .button, .button-secondary { width: 100%; text-align: center; box-sizing: border-box; }
+    .cta-row { flex-direction: column; align-items: stretch; }
+  }
+
+  /* Meta Pixel */
+</style>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1092801917000961');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1092801917000961&ev=PageView&noscript=1"></noscript>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="/leadgen/1">Halstead Systems</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO: proof-first. The method video is the proof; the headline states the offer in the buyer's words. -->
+  <section class="hero band" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Booked by a cloud engineer, not an SDR</p>
+        <h1 id="hero-title">Meetings with engineers who fit. You pay when the meeting happens.</h1>
+        <p class="lede">I'm Sam. I'm a cloud engineer. I book qualified meetings for dev tool and cloud infra companies. No retainer. You only pay for the meetings that actually happen.</p>
+        <div class="cta-row">
+          <a class="button" href="#start">Start the pilot — $99</a>
+          <a class="button-secondary" href="#sample">See 3 prospects first, free</a>
+        </div>
+        <p class="credit-line">Every prospect is found and qualified by a senior cloud engineer who has run the stacks your buyers run.</p>
+      </div>
+      <div>
+        <div class="hero-video">
+          <video src="/leadgen/1/method-draft.mp4" poster="/leadgen/1/method-poster.jpg" controls playsinline preload="metadata"></video>
+        </div>
+        <p class="draft-flag">Draft cut — placeholder cards, final screenshots pending.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF STRIP: the finding, in buyers' own words. Other agencies' customers, labeled honestly. -->
+  <section class="band band--raised" aria-labelledby="proof-title">
+    <div class="wrap">
+      <p id="proof-title" class="proof-intro">I read 49 one-star reviews of the big appointment setting agencies. 22 said the same thing.</p>
+      <ul class="proof-quotes">
+        <li>"The reps knew sales but had zero clue about the product."</li>
+        <li>"Prospects could tell right away it wasn't the founder talking."</li>
+        <li>"$20K spent before you can even tell if it's working."</li>
+      </ul>
+      <p class="proof-src">Public reviews of CIENCE, Belkins, Martal and Callbox. Their customers' words, not mine. The whole model here is the opposite: an engineer who knows your product, prospects you can check first, and a bill only when a meeting happens.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="band" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head"><h2 id="how-title">How it works</h2></div>
+      <ol class="steps">
+        <li><span class="n">Who counts</span><p>We write down who counts. Title, team size, what they run, and a sign they're in the market now. A job post. A migration.</p></li>
+        <li><span class="n">Find them</span><p>I find the engineers who fit and read what they ship. Each one gets a note: who they are, what they run, why now.</p></li>
+        <li><span class="n">Write to them</span><p>One engineer to another. No pitch. I've run their stacks, so I can answer the real questions. A few replies tell us if they meet the bar.</p></li>
+        <li><span class="n">Your calendar</span><p>When they meet the bar, I put 20 minutes on your calendar and send you a short brief. You take the meeting. You close it.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- TWO CARDS: decoy. Free sample left, paid pilot right. -->
+  <section class="band band--raised" aria-labelledby="offers-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="offers-title">Start with proof, not a contract</h2>
+        <p class="section-lede">See the work before you pay for it. Or start the pilot and have your first prospects in two days.</p>
+      </div>
+      <div class="offers">
+        <!-- Free sample -->
+        <div class="card" id="sample">
+          <span class="tag">Free sample</span>
+          <h3>See 3 prospects first. Free.</h3>
+          <p class="price">Within 24 hours. No card.</p>
+          <ul>
+            <li>3 engineers who fit your buyer</li>
+            <li>A note on each: who they are, what they run, why now</li>
+            <li>You judge the fit before anything else</li>
+          </ul>
+          <form class="intake" action="/api/intake" method="POST" data-kind="sample">
+            <input type="hidden" name="kind" value="sample">
+            <label>Your website
+              <input type="url" name="website" placeholder="https://" required>
+            </label>
+            <label>Who do you sell to?
+              <input type="text" name="icp" placeholder="e.g. platform / infra engineers at Series A–B SaaS" required>
+            </label>
+            <label>Work email
+              <input type="email" name="email" placeholder="you@company.com" required>
+            </label>
+            <div class="cta"><button class="button-secondary" type="submit">Send me 3 prospects</button></div>
+            <p class="form-note">The other seven and your qualification bar land within 48 hours of starting the pilot.</p>
+          </form>
+          <div class="intake-ok" id="sample-ok" style="display:none; font-size:15px; color:var(--body); line-height:1.5;">
+            Got it. I'll have 3 prospects that fit your buyer to you within 24 hours, at the email you gave.
+          </div>
+        </div>
+        <!-- Paid pilot -->
+        <div class="card card--primary" id="start">
+          <span class="tag">Pilot</span>
+          <h3>Start the pilot. $99.</h3>
+          <p class="price">Credited to your first meeting.</p>
+          <ul>
+            <li>Your written qualification bar and 10 vetted prospects, in 48 hours</li>
+            <li>Then $600 per meeting that actually happens</li>
+            <li>A no-show gets one reschedule, and you're not billed</li>
+            <li>A meeting that misses the bar is credited</li>
+            <li>3 meetings in 30 days, or your $99 back</li>
+          </ul>
+          <div class="cta">
+            <!-- Stripe payment link ($99, test mode until go-live) → /leadgen/1/thanks -->
+            <a class="button" href="STRIPE_LINK_PLACEHOLDER" data-stripe="leadgen-1-pilot">Start the pilot — $99</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU WON'T GET + WHO -->
+  <section class="band" aria-labelledby="wont-title">
+    <div class="wrap cols">
+      <div>
+        <h2 id="wont-title">What you won't get</h2>
+        <ul class="plain">
+          <li>No retainer</li>
+          <li>No setup fee without a 48-hour deliverable</li>
+          <li>No offshore reps who can't say what you sell</li>
+          <li>No shared or resold lists</li>
+          <li>No automated blasts, no cold calls</li>
+          <li>We don't close — you take the meeting</li>
+        </ul>
+      </div>
+      <div class="who">
+        <h2>Who it's for</h2>
+        <div class="who-grid">
+          <div>
+            <h3>For</h3>
+            <ul class="plain">
+              <li class="for">Dev tool and cloud infra companies</li>
+              <li class="for">Deals worth $20,000 or more</li>
+              <li class="for">A technical buyer</li>
+              <li class="for">Past your first customers</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Not for</h3>
+            <ul class="plain">
+              <li class="not">Pre-revenue companies</li>
+              <li class="not">Deals under $20,000</li>
+              <li class="not">10 to 60 meetings a month</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="band band--raised" aria-labelledby="g-title">
+    <div class="wrap">
+      <div class="guarantee">
+        <h2 id="g-title">The guarantee</h2>
+        <p>Don't get 3 meetings in 30 days and your $99 comes back. A meeting that misses the written bar is credited within 72 hours. A no-show gets one reschedule and isn't billed. And if you change your mind in the first 14 days, email me and I'll refund the $99, no questions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-head"><h2 id="faq-title">Questions</h2></div>
+      <div class="faq">
+        <details><summary>What counts as a meeting I pay for?</summary><p>20 minutes or more, on your calendar, with the named decision maker you agreed was a fit. If they don't show, I reschedule once and you're not billed. If the person doesn't match the bar we both signed off on, it's credited.</p></details>
+        <details><summary>Who takes the call?</summary><p>You do. I book qualified meetings and hand you a short brief on each one. I don't pitch or close your product — you know it better than anyone.</p></details>
+        <details><summary>Why you, and not an agency?</summary><p>I'm a cloud engineer. I've run the stacks your buyers run, so when a prospect asks what your tool does to their deploy pipeline, the person reaching out can actually answer. That's the thing their customers say the big agencies get wrong.</p></details>
+        <details><summary>How fast do I see something?</summary><p>3 prospects free within 24 hours of asking. If you start the pilot, your qualification bar and 10 vetted prospects land within 48 hours. Meetings follow from there.</p></details>
+        <details><summary>What if the meetings aren't good?</summary><p>You only pay for meetings that meet the bar we wrote together. One that misses it is credited. And the whole first month is backed by the 3-in-30 guarantee.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="band band--raised closing" aria-labelledby="close-title">
+    <div class="wrap">
+      <h2 id="close-title">See 3 prospects first. Then decide.</h2>
+      <div class="cta-row">
+        <a class="button" href="#start">Start the pilot — $99</a>
+        <a class="button-secondary" href="#sample">See 3 prospects first, free</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap site-footer">
+    <span>&copy; 2026 Halstead Systems</span>
+    <span class="footer-legal">
+      <a href="/terms">Terms &amp; Conditions</a>
+      <a href="/privacy">Privacy Policy</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var form = document.querySelector('form[data-kind="sample"]');
+    if (!form) return;
+    var ok = document.getElementById('sample-ok');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var body = new URLSearchParams(new FormData(form));
+      fetch(form.action, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+        .finally(function () { form.style.display = 'none'; if (ok) ok.style.display = 'block'; });
+    });
+  })();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
